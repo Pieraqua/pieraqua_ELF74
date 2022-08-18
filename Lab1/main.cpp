@@ -45,7 +45,7 @@
 #include <stdint.h>
 
 #include <iostream>
-using std::cout;
+using namespace std;
 
 #include "template.h"
 
@@ -82,40 +82,67 @@ using std::cout;
 int main(int argc, char ** argv)
 {
     /* Mensagem inicial */
-    cout("Mensagem inicial!");
+    cout<<("Mensagem inicial!\n");
     /* Simbolos pre-definidos */
-    cout("__cplusplus");
-    cout(__cplusplus);
-    cout("__DATE__");
-    cout(__DATE__);
-    cout("__TIME__");
-    cout(__TIME__);
-    cout("__FILE__");
-    cout(__FILE__);
-    cout("__LINE__");
-    cout(__LINE__);
-    cout("__STDC__");
-    cout(__STDC__);
-    cout("__STDC_VERSION__");
-    cout(__STDC_VERSION__);
-    cout("__ARM_ARCH");
-    cout(__ARM_ARCH);
-    cout("__ARM_ARCH_ISA_THUMB");
-    cout(__ARM_ARCH_ISA_THUMB);
-    cout("__ARM_SIZEOF_MINIMAL_ENUM");
-    cout(__ARM_SIZEOF_MINIMAL_ENUM);
-    cout("ARM_SIZEOF_WCHAR_T");
-    cout(ARM_SIZEOF_WCHAR_T);
-    cout("__ARMVFP__");
-    cout(__ARMVFP__);
-    cout("__CORE__");
-    cout(__CORE__);
+    cout<<("__cplusplus\n");
+    cout<<(__cplusplus);
+    cout<<("\n");
+    cout<<("__DATE__");
+    cout<<("\n");
+    cout<<(__DATE__);
+    cout<<("\n");
+    cout<<("__TIME__");
+    cout<<("\n");
+    cout<<(__TIME__);
+    cout<<("\n");
+    cout<<("__FILE__");
+    cout<<("\n");
+    cout<<(__FILE__);
+    cout<<("\n");
+    cout<<("__LINE__");
+    cout<<("\n");
+    cout<<(__LINE__);
+    cout<<("\n");
+    cout<<("__STDC__");
+    cout<<("\n");
+    cout<<(__STDC__);
+    cout<<("\n");
+    cout<<("__STDC_VERSION__");
+    cout<<("\n");
+    cout<<(__STDC_VERSION__);
+    cout<<("\n");
+    cout<<("__ARM_ARCH");
+    cout<<("\n");
+    cout<<(__ARM_ARCH);
+    cout<<("\n");
+    cout<<("__ARM_ARCH_ISA_THUMB");
+    cout<<("\n");
+    cout<<(__ARM_ARCH_ISA_THUMB);
+    cout<<("\n");
+    cout<<("__ARM_SIZEOF_MINIMAL_ENUM");
+    cout<<("\n");
+    cout<<(__ARM_SIZEOF_MINIMAL_ENUM);
+    cout<<("\n");
+    cout<<("__ARM_SIZEOF_WCHAR_T");
+    cout<<("\n");
+    cout<<(__ARM_SIZEOF_WCHAR_T);
+    cout<<("\n");
+    cout<<("__ARMVFP__");
+    cout<<("\n");
+    cout<<(__ARMVFP__);
+    cout<<("\n");
+    cout<<("__CORE__");
+    cout<<("\n");
+    cout<<(__CORE__);
+    cout<<("\n");
     /* Ler cin um float */
     float valor;
+    cin >> valor;
     /* Somar a outro valor em float */
     valor += 1.23;
     /* Apresentar o valor da soma */
-    cout (valor);
+    cout<<(valor);
+    cout<<("\n");
 
     return 0;
 }
