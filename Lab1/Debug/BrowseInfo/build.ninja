@@ -24,18 +24,18 @@ rule PDBLINK
 
 
 #Build steps
-build C$:\Users\Pieraqua\Documents\Universidade\pieraqua_ELF74\Lab1\Debug\BrowseInfo\main.xcl : COMPILER_XCL 
-  xclcommand = -source_file C$:\Users\Pieraqua\Documents\Universidade\pieraqua_ELF74\Lab1\main.cpp -xcl_file C$:\Users\Pieraqua\Documents\Universidade\pieraqua_ELF74\Lab1\Debug\BrowseInfo\main.xcl -macro_file C$:\Users\Pieraqua\Documents\Universidade\pieraqua_ELF74\Lab1\Debug\BrowseInfo\main.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\bin\iccarm.exe"
-  flags = C$:\Users\Pieraqua\Documents\Universidade\pieraqua_ELF74\Lab1\main.cpp -o C$:\Users\Pieraqua\Documents\Universidade\pieraqua_ELF74\Lab1\Debug\Obj\ --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Normal.h" -I C$:\Users\Pieraqua\Documents\Universidade\pieraqua_ELF74\Lab1\..\..\TivaWare_C_Series-2.2.0.295\ -Ol --c++ --no_exceptions --no_rtti --predef_macros C$:\Users\Pieraqua\Documents\Universidade\pieraqua_ELF74\Lab1\Debug\BrowseInfo\main.tmp
-  rspfile_name = C$:\Users\Pieraqua\Documents\Universidade\pieraqua_ELF74\Lab1\Debug\BrowseInfo\main.xcl.rsp
+build C$:\Users\cassi\Documents\UTFPR\Sistemas$ Embarcados\pieraqua_ELF74\Lab1\Debug\BrowseInfo\main.xcl : COMPILER_XCL 
+  xclcommand = -source_file "C$:\Users\cassi\Documents\UTFPR\Sistemas$ Embarcados\pieraqua_ELF74\Lab1\main.cpp" -xcl_file "C$:\Users\cassi\Documents\UTFPR\Sistemas$ Embarcados\pieraqua_ELF74\Lab1\Debug\BrowseInfo\main.xcl" -macro_file "C$:\Users\cassi\Documents\UTFPR\Sistemas$ Embarcados\pieraqua_ELF74\Lab1\Debug\BrowseInfo\main.tmp" -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\bin\iccarm.exe"
+  flags = "C$:\Users\cassi\Documents\UTFPR\Sistemas$ Embarcados\pieraqua_ELF74\Lab1\main.cpp" -o "C$:\Users\cassi\Documents\UTFPR\Sistemas$ Embarcados\pieraqua_ELF74\Lab1\Debug\Obj\\" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Normal.h" -I "C$:\Users\cassi\Documents\UTFPR\Sistemas$ Embarcados\pieraqua_ELF74\Lab1\..\..\TivaWare_C_Series-2.2.0.295\\" -Ol --c++ --no_exceptions --no_rtti --predef_macros "C$:\Users\cassi\Documents\UTFPR\Sistemas$ Embarcados\pieraqua_ELF74\Lab1\Debug\BrowseInfo\main.tmp"
+  rspfile_name = C$:\Users\cassi\Documents\UTFPR\Sistemas$ Embarcados\pieraqua_ELF74\Lab1\Debug\BrowseInfo\main.xcl.rsp
 
-build C$:\Users\Pieraqua\Documents\Universidade\pieraqua_ELF74\Lab1\Debug\BrowseInfo\main.pbi : INDEXER C$:\Users\Pieraqua\Documents\Universidade\pieraqua_ELF74\Lab1\Debug\BrowseInfo\main.xcl |  $
-C$:\Users\Pieraqua\Documents\Universidade\pieraqua_ELF74\Lab1\main.cpp
-  flags = -out=C$:\Users\Pieraqua\Documents\Universidade\pieraqua_ELF74\Lab1\Debug\BrowseInfo\main.pbi -f C$:\Users\Pieraqua\Documents\Universidade\pieraqua_ELF74\Lab1\Debug\BrowseInfo\main.xcl
+build C$:\Users\cassi\Documents\UTFPR\Sistemas$ Embarcados\pieraqua_ELF74\Lab1\Debug\BrowseInfo\main.pbi : INDEXER C$:\Users\cassi\Documents\UTFPR\Sistemas$ Embarcados\pieraqua_ELF74\Lab1\Debug\BrowseInfo\main.xcl |  $
+C$:\Users\cassi\Documents\UTFPR\Sistemas$ Embarcados\pieraqua_ELF74\Lab1\main.cpp
+  flags = "-out=C$:\Users\cassi\Documents\UTFPR\Sistemas$ Embarcados\pieraqua_ELF74\Lab1\Debug\BrowseInfo\main.pbi" -f "C$:\Users\cassi\Documents\UTFPR\Sistemas$ Embarcados\pieraqua_ELF74\Lab1\Debug\BrowseInfo\main.xcl"
 
-build C$:\Users\Pieraqua\Documents\Universidade\pieraqua_ELF74\Lab1\Debug\BrowseInfo\Lab1.pbw : MAKEBROWSE C$:\Users\Pieraqua\Documents\Universidade\pieraqua_ELF74\Lab1\Debug\BrowseInfo\Lab1.pbd
-  flags = C$:\Users\Pieraqua\Documents\Universidade\pieraqua_ELF74\Lab1\Debug\BrowseInfo\Lab1.pbd -output C$:\Users\Pieraqua\Documents\Universidade\pieraqua_ELF74\Lab1\Debug\BrowseInfo\Lab1.pbw
+build C$:\Users\cassi\Documents\UTFPR\Sistemas$ Embarcados\pieraqua_ELF74\Lab1\Debug\BrowseInfo\Lab1.pbw : MAKEBROWSE C$:\Users\cassi\Documents\UTFPR\Sistemas$ Embarcados\pieraqua_ELF74\Lab1\Debug\BrowseInfo\Lab1.pbd
+  flags = "C$:\Users\cassi\Documents\UTFPR\Sistemas$ Embarcados\pieraqua_ELF74\Lab1\Debug\BrowseInfo\Lab1.pbd" -output "C$:\Users\cassi\Documents\UTFPR\Sistemas$ Embarcados\pieraqua_ELF74\Lab1\Debug\BrowseInfo\Lab1.pbw"
 
-build C$:\Users\Pieraqua\Documents\Universidade\pieraqua_ELF74\Lab1\Debug\BrowseInfo\Lab1.pbd : PDBLINK C$:\Users\Pieraqua\Documents\Universidade\pieraqua_ELF74\Lab1\Debug\BrowseInfo\main.pbi
-  flags = -M C$:\Users\Pieraqua\Documents\Universidade\pieraqua_ELF74\Lab1\Debug\BrowseInfo\Lab1.pbd C$:\Users\Pieraqua\Documents\Universidade\pieraqua_ELF74\Lab1\Debug\BrowseInfo\main.pbi
+build C$:\Users\cassi\Documents\UTFPR\Sistemas$ Embarcados\pieraqua_ELF74\Lab1\Debug\BrowseInfo\Lab1.pbd : PDBLINK C$:\Users\cassi\Documents\UTFPR\Sistemas$ Embarcados\pieraqua_ELF74\Lab1\Debug\BrowseInfo\main.pbi
+  flags = -M "C$:\Users\cassi\Documents\UTFPR\Sistemas$ Embarcados\pieraqua_ELF74\Lab1\Debug\BrowseInfo\Lab1.pbd" "C$:\Users\cassi\Documents\UTFPR\Sistemas$ Embarcados\pieraqua_ELF74\Lab1\Debug\BrowseInfo\main.pbi"
 
