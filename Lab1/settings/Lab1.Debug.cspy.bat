@@ -25,7 +25,7 @@ if not "%~1" == "" goto debugFile
 
 @echo on 
 
-"C:\Program Files\IAR Systems\Embedded Workbench 9.1\common\bin\cspybat" -f "C:\Users\cassi\Documents\UTFPR\Sistemas Embarcados\pieraqua_ELF74\Lab1\settings\Lab1.Debug.general.xcl" --backend -f "C:\Users\cassi\Documents\UTFPR\Sistemas Embarcados\pieraqua_ELF74\Lab1\settings\Lab1.Debug.driver.xcl" 
+"C:\Program Files\IAR Systems\Embedded Workbench 9.1\common\bin\cspybat" -f "C:\Users\Pieraqua\Documents\Universidade\pieraqua_ELF74\Lab1\settings\Lab1.Debug.general.xcl" --backend -f "C:\Users\Pieraqua\Documents\Universidade\pieraqua_ELF74\Lab1\settings\Lab1.Debug.driver.xcl" 
 
 @echo off 
 goto end 
@@ -34,7 +34,7 @@ goto end
 
 @echo on 
 
-"C:\Program Files\IAR Systems\Embedded Workbench 9.1\common\bin\cspybat" -f "C:\Users\cassi\Documents\UTFPR\Sistemas Embarcados\pieraqua_ELF74\Lab1\settings\Lab1.Debug.general.xcl" "--debug_file=%~1" --backend -f "C:\Users\cassi\Documents\UTFPR\Sistemas Embarcados\pieraqua_ELF74\Lab1\settings\Lab1.Debug.driver.xcl" 
+"C:\Program Files\IAR Systems\Embedded Workbench 9.1\common\bin\cspybat" -f "C:\Users\Pieraqua\Documents\Universidade\pieraqua_ELF74\Lab1\settings\Lab1.Debug.general.xcl" "--debug_file=%~1" --backend -f "C:\Users\Pieraqua\Documents\Universidade\pieraqua_ELF74\Lab1\settings\Lab1.Debug.driver.xcl" 
 
 @echo off 
 :end
