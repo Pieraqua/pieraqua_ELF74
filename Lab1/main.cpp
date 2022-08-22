@@ -139,7 +139,7 @@ int main(int argc, char ** argv)
     float valor;
     cin >> valor;
     /* Somar a outro valor em float */
-    valor += 1.23;
+    valor += 1.23F;
     /* Apresentar o valor da soma */
     cout<<(valor);
     cout<<("\n");
