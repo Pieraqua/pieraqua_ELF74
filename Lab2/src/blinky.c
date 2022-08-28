@@ -28,6 +28,7 @@
 #include "inc/hw_memmap.h"
 #include "driverlib/sysctl.h"
 #include "driverlib/gpio.h"
+#include "driverlib/systick.h"
 
 //*****************************************************************************
 //
@@ -61,6 +62,26 @@ __error__(char *pcFilename, uint32_t ui32Line)
 }
 #endif
 
+volatile uint32_t ui32LedTimer = 0;
+
+static void blink_led_1()
+{
+  static uint8_t ui8LedStatus = 0;
+  
+  if(ui8LedStatus)
+    GPIOPinWrite(GPIO_PORTN_BASE, (USER_LED1), 0);
+  else
+    GPIOPinWrite(GPIO_PORTN_BASE, (USER_LED1), USER_LED1);
+
+  ui8LedStatus = !ui8LedStatus;
+}
+
+void systick_tick()
+{
+  if(ui32LedTimer)
+    ui32LedTimer--;
+}
+
 //*****************************************************************************
 //
 // Main 'C' Language entry point.  Toggle an LED using TivaWare.
@@ -92,31 +113,36 @@ main(void)
     //
     // Configure the GPIO port for the LED operation.
     //
-    GPIOPinTypeGPIOOutput(GPIO_PORTN_BASE, (USER_LED1|USER_LED2));
+    GPIOPinTypeGPIOOutput(GPIO_PORTN_BASE, (USER_LED1));
+    
+    /* Desabilita o systick (boas praticas) */
+    SysTickDisable();
 
+    /* Configura o Systick para interromper com a funcao desejada */
+    SysTickIntRegister(systick_tick);
+    
+    /* Configura o periodo do systick para 1ms */
+    /* SysClock ticks = 1s, SysClock ticks / 1000 = 1ms */
+    SysTickPeriodSet(ui32SysClock/1000);
+    
+    /* Ativa o systick */
+    SysTickEnable();
+    
+    /* Habilita a interrupcao do systick */
+    SysTickIntEnable();
+    
+    
     //
     // Loop Forever
     //
     while(1)
     {
-        //
-        // Turn on the LED
-        //
-        GPIOPinWrite(GPIO_PORTN_BASE, (USER_LED1|USER_LED2), USER_LED1);
-
-        //
-        // Delay for a bit
-        //
-        SysCtlDelay(ui32SysClock/6);
-
-        //
-        // Turn on the LED
-        //
-        GPIOPinWrite(GPIO_PORTN_BASE, (USER_LED1|USER_LED2), USER_LED2);
-
-        //
-        // Delay for a bit
-        //
-        SysCtlDelay(ui32SysClock/6);
+        if(!ui32LedTimer)
+        {
+            blink_led_1();
+            
+            /* 100ms de periodo */
+            ui32LedTimer = 100;
+        }
     }
 }
