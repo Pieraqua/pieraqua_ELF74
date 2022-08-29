@@ -15,6 +15,7 @@ int main(void)
     vSYSTEM_Init();
     vGPIO_Init();
     ui8GPIO_SetSwitchFlag(0);
+    vGPIO_SetLED1(LED_ON);
     ui32ContTempo = 0;
     //
     // Loop Forever
@@ -27,10 +28,12 @@ int main(void)
         {
           printf("Numero de clocks: %d\n", ui32ContTempo*100);
           printf("Tempo de reacao: %d ms\n", ui32ContTempo/10);
+          while(1);
         }
         else
         {
           printf("Falhou!\n");
+          while(1);
         }
       }
       
