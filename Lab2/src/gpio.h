@@ -10,6 +10,7 @@
 #include "inc/hw_memmap.h"
 
 #define USER_LED1 GPIO_PIN_0
+#define USER_LED1 GPIO_PIN_0
 
 /**
 * Inicializa as portas GPIO utilizadas.
