@@ -23,5 +23,6 @@ void vGPIO_Init()
     // Configure the GPIO port for the LED operation.
     //
     GPIOPinTypeGPIOOutput(GPIO_PORTN_BASE, (USER_LED1));
+    GPIOPinTypeGPIOOutput(GPIO_PORTJ_BASE, (USER_SWITCH));
     
 }
