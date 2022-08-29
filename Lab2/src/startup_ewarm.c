@@ -74,6 +74,7 @@ uVectorEntry;
 
 
 extern void vSYSTEM_Tick();
+extern void vGPIO_IntSwitch();
 //*****************************************************************************
 //
 // The vector table.  Note that the proper constructs must be placed on this to
@@ -150,7 +151,7 @@ __root const uVectorEntry __vector_table[] @ ".intvec" =
     IntDefaultHandler,                      // ADC1 Sequence 2
     IntDefaultHandler,                      // ADC1 Sequence 3
     IntDefaultHandler,                      // External Bus Interface 0
-    IntDefaultHandler,                      // GPIO Port J
+    vGPIO_IntSwitch,                      // GPIO Port J
     IntDefaultHandler,                      // GPIO Port K
     IntDefaultHandler,                      // GPIO Port L
     IntDefaultHandler,                      // SSI2 Rx and Tx

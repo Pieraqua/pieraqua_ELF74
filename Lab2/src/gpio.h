@@ -9,8 +9,8 @@
 #include "driverlib/gpio.h"
 #include "inc/hw_memmap.h"
 
-#define USER_LED1 GPIO_PIN_0
-#define USER_LED1 GPIO_PIN_0
+#define USER_LED1 GPIO_PIN_0 //PN0
+#define USER_SWITCH GPIO_PIN_0 //PJ0
 
 /**
 * Inicializa as portas GPIO utilizadas.
@@ -21,3 +21,14 @@ void vGPIO_Init();
 * @brief Inverte o estado (pisca) o USER_LED1.
 */
 void vGPIO_BlinkLED();
+
+/**
+* @brief Retorna o estado da flag do user_switch
+*/
+uint8_t ui8GPIO_GetSwitchFlag();
+
+/**
+* @brief Seta o estado da flag do user_switch para @p val.
+*/
+void ui8GPIO_SetSwitchFlag(uint8_t val);
+
