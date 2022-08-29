@@ -17,12 +17,6 @@ int main(void)
     //
     while(1)
     {
-        if(!ui32LedTimer)
-        {
-            blink_led_1();
-            
-            /* 100ms de periodo */
-            ui32LedTimer = 100;
-        }
+        
     }
 }

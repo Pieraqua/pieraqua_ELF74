@@ -1424,6 +1424,15 @@
         </settings>
     </configuration>
     <group>
+        <name>Include</name>
+        <file>
+            <name>$PROJ_DIR$\src\gpio.h</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\src\system.h</name>
+        </file>
+    </group>
+    <group>
         <name>Libraries</name>
         <file>
             <name>$PROJ_DIR$\..\..\TivaWare_C_Series-2.2.0.295\driverlib\ewarm\Exe\driverlib.a</name>
@@ -1435,7 +1444,16 @@
             <name>$PROJ_DIR$\src\blinky.c</name>
         </file>
         <file>
+            <name>$PROJ_DIR$\src\gpio.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\src\main.c</name>
+        </file>
+        <file>
             <name>$PROJ_DIR$\src\startup_ewarm.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\src\system.c</name>
         </file>
     </group>
 </project>

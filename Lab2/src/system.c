@@ -3,6 +3,13 @@
 * @brief Arquivo de configuracao das funcionalidades de sistema (clock e systick).
 */
 
+#include "system.h"
+
+void vSYSTEM_Tick()
+{
+    
+}
+
 /**
 * @brief Inicializa o clock do sistema e o SysTick.
 */
@@ -22,9 +29,6 @@ void vSYSTEM_Init()
 
   /* Desabilita o systick (boas praticas) */
     SysTickDisable();
-
-    /* Configura o Systick para interromper com a funcao desejada */
-    SysTickIntRegister(systick_tick);
     
     /* Configura o periodo do systick para 1ms */
     /* SysClock ticks = 1s, SysClock ticks / 1000 = 1ms */

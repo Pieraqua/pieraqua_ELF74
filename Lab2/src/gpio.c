@@ -4,6 +4,8 @@
 *   @brief Arquivo de configuracao das funcionalidades de gpio do projeto.
 */
 
+#include "gpio.h"
+
 /**
 * Inicializa as portas GPIO utilizadas.
 */

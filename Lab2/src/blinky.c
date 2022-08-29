@@ -88,7 +88,7 @@ void systick_tick()
 //
 //*****************************************************************************
 int
-main(void)
+main_blinky(void)
 {
     uint32_t ui32SysClock;
 

@@ -73,7 +73,7 @@ typedef union
 uVectorEntry;
 
 
-extern void systick_tick();
+extern void vSYSTEM_Tick();
 //*****************************************************************************
 //
 // The vector table.  Note that the proper constructs must be placed on this to
@@ -98,7 +98,7 @@ __root const uVectorEntry __vector_table[] @ ".intvec" =
     IntDefaultHandler,                      // Debug monitor handler
     0,                                      // Reserved
     IntDefaultHandler,                      // The PendSV handler
-    systick_tick,                           // The SysTick handler
+    vSYSTEM_Tick,                           // The SysTick handler
     IntDefaultHandler,                      // GPIO Port A
     IntDefaultHandler,                      // GPIO Port B
     IntDefaultHandler,                      // GPIO Port C
