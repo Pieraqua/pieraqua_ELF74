@@ -25,13 +25,24 @@ int main(void)
     IntMasterEnable();
     //
     // Loop Forever
-    //
+    //    
     while(1)
     {
+      #ifdef __TESTE_ENABLE
+        if(ui32ContTempo%10000)
+        {
+          vGPIO_BlinkLED();
+          ui8GPIO_SetSwitchFlag(1);
+          ui8GPIO_SetSwitchFlag(0);
+        }
+      #endif //__TESTE_ENABLE
       if(!(ui8GPIO_GetSwitchFlag()==0 && ui32ContTempo<30000) && running)
       {
         if(ui8GPIO_GetSwitchFlag()==1)
         {
+          #ifdef __DEBUG_ENABLE
+            printf("botao pressionado\n");
+          #endif //__DEBUG_ENABLE
           uint32_t nclocks = ui32ContTempo*100;
           uint32_t tempo = ui32ContTempo/10;
           printf("Numero de clocks: %u\n", nclocks);
