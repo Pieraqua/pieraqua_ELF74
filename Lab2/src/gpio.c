@@ -23,10 +23,10 @@ void vGPIO_Init()
     {
     }
     
-    //
-    // Configure the GPIO port for the LED operation.
-    //
+    /* Configuracao USER_LED1 */
     GPIOPinTypeGPIOOutput(GPIO_PORTN_BASE, (USER_LED1));
+    
+    /* Configuracao USER_SWITCH */
     GPIOIntDisable(GPIO_PORTJ_BASE, 0x1FF);
     GPIOIntTypeSet(GPIO_PORTJ_BASE, USER_SWITCH, GPIO_FALLING_EDGE);
     GPIOPinTypeGPIOInput(GPIO_PORTJ_BASE, (USER_SWITCH));
@@ -35,19 +35,28 @@ void vGPIO_Init()
 }
       
 /**
-* @brief Inverte o estado (pisca) o USER_LED1.
+* @brief Inverte o estado (pisca) o USER_LED2.
 */
 void vGPIO_BlinkLED()
 {
     static uint8_t ui8LedStatus = 0;
   
     if(ui8LedStatus)
-      GPIOPinWrite(GPIO_PORTN_BASE, (USER_LED1), 0);
+      GPIOPinWrite(GPIO_PORTN_BASE, (USER_LED2), 0);
     else
-      GPIOPinWrite(GPIO_PORTN_BASE, (USER_LED1), USER_LED1);
+      GPIOPinWrite(GPIO_PORTN_BASE, (USER_LED2), USER_LED2);
 
     ui8LedStatus = !ui8LedStatus;
 }
+
+/**
+* @brief Seta o estado do USER_LED1.
+*/
+void vGPIO_SetLED1(enLEDState val)
+{
+    GPIOPinWrite(GPIO_PORTN_BASE, (USER_LED2), val);
+}
+
 
 uint8_t ui8FlagSwitch = 0;
 
