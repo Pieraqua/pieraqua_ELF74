@@ -25,6 +25,8 @@ void vGPIO_Init()
     
     /* Configuracao USER_LED1 */
     GPIOPinTypeGPIOOutput(GPIO_PORTN_BASE, (USER_LED1));
+    /* Configuracao USER_LED2 */
+    GPIOPinTypeGPIOOutput(GPIO_PORTN_BASE, (USER_LED2));
     
     /* Configuracao USER_SWITCH */
     GPIOIntDisable(GPIO_PORTJ_BASE, 0x1FF);
