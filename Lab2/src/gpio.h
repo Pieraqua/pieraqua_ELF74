@@ -6,6 +6,8 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include "driverlib/sysctl.h"
+#include "driverlib/interrupt.h"
+#include "inc/tm4c1294ncpdt.h"
 #include "driverlib/gpio.h"
 #include "inc/hw_memmap.h"
 

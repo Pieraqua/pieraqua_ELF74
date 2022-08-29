@@ -5,77 +5,66 @@
     <configuration>
         <name>Debug</name>
         <outputs>
-            <file>$TOOLKIT_DIR$\inc\c\stdio.h</file>
-            <file>$TOOLKIT_DIR$\inc\c\ysizet.h</file>
-            <file>$PROJ_DIR$\ewarm\Exe\Lab2.bin</file>
-            <file>$PROJ_DIR$\ewarm\Obj\Source\gpio.o</file>
-            <file>$PROJ_DIR$\ewarm\Obj\Source\startup_ewarm.o</file>
-            <file>$PROJ_DIR$\ewarm\Obj\Source\blinky.o</file>
-            <file>$PROJ_DIR$\ewarm\Obj\Source\main.o</file>
-            <file>$PROJ_DIR$\ewarm\Obj\Source\system.o</file>
-            <file>$TOOLKIT_DIR$\inc\c\ycheck.h</file>
-            <file>$TOOLKIT_DIR$\inc\c\stdint.h</file>
-            <file>$PROJ_DIR$\..\..\TivaWare_C_Series-2.2.0.295\driverlib\gpio.h</file>
-            <file>$TOOLKIT_DIR$\inc\c\yvals.h</file>
-            <file>$TOOLKIT_DIR$\inc\c\DLib_Product.h</file>
-            <file>$TOOLKIT_DIR$\inc\c\stdbool.h</file>
-            <file>$PROJ_DIR$\..\..\TivaWare_C_Series-2.2.0.295\driverlib\sysctl.h</file>
-            <file>$TOOLKIT_DIR$\inc\c\DLib_Defaults.h</file>
-            <file>$TOOLKIT_DIR$\inc\c\DLib_Config_Normal.h</file>
-            <file>$PROJ_DIR$\..\..\TivaWare_C_Series-2.2.0.295\inc\hw_memmap.h</file>
-            <file>$PROJ_DIR$\ewarm\Exe\Lab2.out</file>
-            <file>$PROJ_DIR$\..\..\TivaWare_C_Series-2.2.0.295\driverlib\ewarm\Exe\driverlib.a</file>
-            <file>$PROJ_DIR$\src\gpio.h</file>
-            <file>$PROJ_DIR$\src\startup_ewarm.c</file>
-            <file>$PROJ_DIR$\src\system.c</file>
-            <file>$PROJ_DIR$\src\gpio.c</file>
-            <file>$PROJ_DIR$\src\system.h</file>
             <file>$PROJ_DIR$\src\blinky.c</file>
-            <file>$PROJ_DIR$\src\main.c</file>
+            <file>$PROJ_DIR$\src\startup_ewarm.c</file>
+            <file>$PROJ_DIR$\..\..\TivaWare_C_Series-2.2.0.295\driverlib\ewarm\Exe\driverlib.a</file>
             <file>$PROJ_DIR$\..\..\TivaWare_C_Series-2.2.0.295\driverlib\systick.h</file>
-            <file>$PROJ_DIR$\Tiva.icf</file>
-            <file>$TOOLKIT_DIR$\lib\shb_l.a</file>
+            <file>$PROJ_DIR$\src\gpio.h</file>
             <file>$TOOLKIT_DIR$\lib\rt7M_tl.a</file>
-            <file>$PROJ_DIR$\..\..\TivaWare_C_Series-2.2.0.295\inc\hw_nvic.h</file>
             <file>$TOOLKIT_DIR$\lib\m7M_tls.a</file>
             <file>$PROJ_DIR$\ewarm\List\Lab2.map</file>
             <file>$TOOLKIT_DIR$\lib\dl7M_tln.a</file>
+            <file>$PROJ_DIR$\..\..\TivaWare_C_Series-2.2.0.295\driverlib\gpio.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Product.h</file>
+            <file>$PROJ_DIR$\..\..\TivaWare_C_Series-2.2.0.295\driverlib\sysctl.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\stdbool.h</file>
+            <file>$TOOLKIT_DIR$\lib\shb_l.a</file>
+            <file>$PROJ_DIR$\..\..\TivaWare_C_Series-2.2.0.295\inc\hw_memmap.h</file>
+            <file>$PROJ_DIR$\Tiva.icf</file>
             <file>$PROJ_DIR$\..\..\TivaWare_C_Series-2.2.0.295\inc\hw_types.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\yvals.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Defaults.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Config_Normal.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\ycheck.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\stdint.h</file>
+            <file>$PROJ_DIR$\..\..\TivaWare_C_Series-2.2.0.295\inc\hw_nvic.h</file>
+            <file>$PROJ_DIR$\src\system.c</file>
+            <file>$PROJ_DIR$\ewarm\Exe\Lab2.out</file>
+            <file>$PROJ_DIR$\ewarm\Obj\Source\startup_ewarm.o</file>
+            <file>$PROJ_DIR$\ewarm\Obj\Source\blinky.o</file>
+            <file>$PROJ_DIR$\ewarm\Exe\Lab2.bin</file>
+            <file>$PROJ_DIR$\..\..\TivaWare_C_Series-2.2.0.295\driverlib\interrupt.h</file>
+            <file>$PROJ_DIR$\src\gpio.c</file>
+            <file>$PROJ_DIR$\src\main.c</file>
+            <file>$PROJ_DIR$\src\system.h</file>
+            <file>$PROJ_DIR$\ewarm\Obj\Source\main.o</file>
+            <file>$PROJ_DIR$\ewarm\Obj\Source\system.o</file>
+            <file>$PROJ_DIR$\ewarm\Obj\Source\gpio.o</file>
+            <file>$PROJ_DIR$\..\..\TivaWare_C_Series-2.2.0.295\inc\tm4c1294ncpdt.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\ysizet.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\stdio.h</file>
         </outputs>
         <file>
             <name>[ROOT_NODE]</name>
             <outputs>
                 <tool>
                     <name>ILINK</name>
-                    <file> 18 33</file>
+                    <file> 24 7</file>
                 </tool>
             </outputs>
         </file>
         <file>
-            <name>$PROJ_DIR$\ewarm\Exe\Lab2.bin</name>
-            <inputs>
-                <tool>
-                    <name>OBJCOPY</name>
-                    <file> 18</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\ewarm\Exe\Lab2.out</name>
+            <name>$PROJ_DIR$\src\blinky.c</name>
             <outputs>
                 <tool>
-                    <name>OBJCOPY</name>
-                    <file> 2</file>
-                </tool>
-                <tool>
-                    <name>ILINK</name>
-                    <file> 33</file>
+                    <name>ICCARM</name>
+                    <file> 26</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
-                    <name>ILINK</name>
-                    <file> 28 5 19 3 6 4 7 29 30 32 34</file>
+                    <name>ICCARM</name>
+                    <file> 21 20 17 18 19 10 12 16 14 11 9 3</file>
                 </tool>
             </inputs>
         </file>
@@ -84,13 +73,13 @@
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 4</file>
+                    <file> 25</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 9 8 11 15 16 12 31 35</file>
+                    <file> 21 20 17 18 19 10 22 16</file>
                 </tool>
             </inputs>
         </file>
@@ -99,13 +88,41 @@
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 7</file>
+                    <file> 33</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 24 13 9 8 11 15 16 12 14 27</file>
+                    <file> 31 12 21 20 17 18 19 10 11 3</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\ewarm\Exe\Lab2.out</name>
+            <outputs>
+                <tool>
+                    <name>OBJCOPY</name>
+                    <file> 27</file>
+                </tool>
+                <tool>
+                    <name>ILINK</name>
+                    <file> 7</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ILINK</name>
+                    <file> 15 26 2 34 32 25 33 13 5 6 8</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\ewarm\Exe\Lab2.bin</name>
+            <inputs>
+                <tool>
+                    <name>OBJCOPY</name>
+                    <file> 24</file>
                 </tool>
             </inputs>
         </file>
@@ -114,28 +131,13 @@
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 3</file>
+                    <file> 34</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 20 9 8 11 15 16 12 13 14 10 17</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\src\blinky.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 5</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 9 8 11 15 16 12 13 35 17 14 10 27</file>
+                    <file> 4 21 20 17 18 19 10 12 11 28 35 9 14</file>
                 </tool>
             </inputs>
         </file>
@@ -144,19 +146,38 @@
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 6</file>
+                    <file> 32</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 20 9 8 11 15 16 12 13 14 10 17 24 27 0 1</file>
+                    <file> 4 21 20 17 18 19 10 12 11 28 35 9 14 31 3 37 36</file>
                 </tool>
             </inputs>
         </file>
         <forcedrebuild>
-            <name>[MULTI_TOOL]</name>
-            <tool>ILINK</tool>
+            <name>$PROJ_DIR$\src\blinky.c</name>
+            <tool>ICCARM</tool>
+        </forcedrebuild>
+        <forcedrebuild>
+            <name>$PROJ_DIR$\src\startup_ewarm.c</name>
+            <tool>ICCARM</tool>
+        </forcedrebuild>
+        <forcedrebuild>
+            <name>$PROJ_DIR$\src\system.c</name>
+            <tool>ICCARM</tool>
+        </forcedrebuild>
+        <forcedrebuild>
+            <name>$PROJ_DIR$\src\gpio.c</name>
+            <tool>ICCARM</tool>
+        </forcedrebuild>
+        <forcedrebuild>
+            <name>$PROJ_DIR$\src\main.c</name>
+            <tool>ICCARM</tool>
+        </forcedrebuild>
+        <forcedrebuild>
+            <name>[REBUILD_ALL]</name>
         </forcedrebuild>
     </configuration>
 </project>

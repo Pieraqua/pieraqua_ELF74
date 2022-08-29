@@ -34,8 +34,8 @@ void vSYSTEM_Init()
     SysTickDisable();
     
     /* Configura o periodo do systick para 1ms */
-    /* SysClock ticks = 1s, SysClock ticks / 1000 = 100us */
-    SysTickPeriodSet(SYSTEM_CLOCK/100);
+    /* SysClock ticks = 1s, SysClock ticks / 10000 = 100us */
+    SysTickPeriodSet(SYSTEM_CLOCK/10000);
     
     /* Ativa o systick */
     SysTickEnable();

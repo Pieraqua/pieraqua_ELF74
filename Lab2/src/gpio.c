@@ -30,7 +30,9 @@ void vGPIO_Init()
     GPIOIntDisable(GPIO_PORTJ_BASE, 0x1FF);
     GPIOIntTypeSet(GPIO_PORTJ_BASE, USER_SWITCH, GPIO_FALLING_EDGE);
     GPIOPinTypeGPIOInput(GPIO_PORTJ_BASE, (USER_SWITCH));
+    GPIOPadConfigSet(GPIO_PORTJ_BASE, USER_SWITCH, GPIO_STRENGTH_2MA, GPIO_PIN_TYPE_STD_WPU);
     GPIOIntEnable(GPIO_PORTJ_BASE, USER_SWITCH);
+    IntEnable(INT_GPIOJ);
     
 }
       
@@ -54,11 +56,11 @@ void vGPIO_BlinkLED()
 */
 void vGPIO_SetLED1(enLEDState val)
 {
-    GPIOPinWrite(GPIO_PORTN_BASE, (USER_LED2), val);
+    GPIOPinWrite(GPIO_PORTN_BASE, (USER_LED1), val);
 }
 
 
-uint8_t ui8FlagSwitch = 0;
+volatile uint8_t ui8FlagSwitch = 0;
 
 /**
 * @brief Seta o estado da flag do user_switch para @p val.
