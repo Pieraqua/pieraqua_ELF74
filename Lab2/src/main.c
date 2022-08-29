@@ -9,6 +9,8 @@
 #include "driverlib/interrupt.h"
 #include <stdio.h>
 
+#define __TESTE_ENABLE
+
 volatile uint32_t ui32ContTempo = 0;
 
 int main(void)
@@ -29,12 +31,12 @@ int main(void)
     while(1)
     {
       #ifdef __TESTE_ENABLE
-        if(ui32ContTempo%10000)
-        {
-          vGPIO_BlinkLED();
-          ui8GPIO_SetSwitchFlag(1);
-          ui8GPIO_SetSwitchFlag(0);
-        }
+      if(!ui32ContTempo%1000)
+      {
+        vGPIO_BlinkLED();
+        ui8GPIO_SetSwitchFlag(1);
+        ui8GPIO_SetSwitchFlag(0);
+      }
       #endif //__TESTE_ENABLE
       if(!(ui8GPIO_GetSwitchFlag()==0 && ui32ContTempo<30000) && running)
       {
