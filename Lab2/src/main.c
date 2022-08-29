@@ -19,11 +19,12 @@ int main(void)
     IntMasterDisable();
     vSYSTEM_Init();
     vGPIO_Init();
+    IntMasterEnable();
+    
     SysCtlDelay(SYSTEM_CLOCK/10 * 5);
     vGPIO_SetLED1(LED_ON);
     ui8GPIO_SetSwitchFlag(0);
     ui32ContTempo = 0;
-    IntMasterEnable();
     //
     // Loop Forever
     //    
