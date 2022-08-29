@@ -8,6 +8,8 @@
 #include "driverlib/sysctl.h"
 #include "driverlib/systick.h"
 
+#define SYSTEM_CLOCK 40000000
+
 /**
 * @brief Inicializa o clock do sistema e o SysTick.
 */

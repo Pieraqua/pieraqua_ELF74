@@ -7,6 +7,8 @@
 #include "gpio.h"
 #include "system.h"
 
+volatile uint32_t ui32ContTempo = 0;
+
 int main(void)
 {
     vSYSTEM_Init();

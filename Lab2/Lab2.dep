@@ -67,6 +67,12 @@
         </file>
         <file>
             <name>$PROJ_DIR$\src\startup_ewarm.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 25</file>
+                </tool>
+            </outputs>
             <inputs>
                 <tool>
                     <name>ICCARM</name>
