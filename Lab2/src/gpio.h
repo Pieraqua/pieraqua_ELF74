@@ -15,3 +15,8 @@
 * Inicializa as portas GPIO utilizadas.
 */
 void vGPIO_Init();
+
+/**
+* @brief Inverte o estado (pisca) o USER_LED1.
+*/
+void vGPIO_BlinkLED();

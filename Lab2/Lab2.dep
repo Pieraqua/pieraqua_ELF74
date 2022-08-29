@@ -33,7 +33,6 @@
             <file>$PROJ_DIR$\ewarm\Obj\Source\startup_ewarm.o</file>
             <file>$PROJ_DIR$\ewarm\Obj\Source\blinky.o</file>
             <file>$PROJ_DIR$\ewarm\Exe\Lab2.bin</file>
-            <file>$PROJ_DIR$\..\Lab1\main.cpp</file>
             <file>$PROJ_DIR$\src\gpio.c</file>
             <file>$PROJ_DIR$\src\main.c</file>
             <file>$PROJ_DIR$\src\system.h</file>
@@ -85,13 +84,13 @@
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 33</file>
+                    <file> 32</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 31 12 21 20 17 18 19 10 11 3</file>
+                    <file> 30 12 21 20 17 18 19 10 11 3</file>
                 </tool>
             </inputs>
         </file>
@@ -110,7 +109,7 @@
             <inputs>
                 <tool>
                     <name>ILINK</name>
-                    <file> 15 26 2 34 32 25 33 13 5 6 8</file>
+                    <file> 15 26 2 33 31 25 32 13 5 6 8</file>
                 </tool>
             </inputs>
         </file>
@@ -128,7 +127,7 @@
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 34</file>
+                    <file> 33</file>
                 </tool>
             </outputs>
             <inputs>
@@ -143,19 +142,15 @@
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 32</file>
+                    <file> 31</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 4 21 20 17 18 19 10 12 11 9 14 31 3</file>
+                    <file> 4 21 20 17 18 19 10 12 11 9 14 30 3</file>
                 </tool>
             </inputs>
         </file>
-        <forcedrebuild>
-            <name>[MULTI_TOOL]</name>
-            <tool>ILINK</tool>
-        </forcedrebuild>
     </configuration>
 </project>

@@ -25,3 +25,18 @@ void vGPIO_Init()
     GPIOPinTypeGPIOOutput(GPIO_PORTN_BASE, (USER_LED1));
     
 }
+      
+/**
+* @brief Inverte o estado (pisca) o USER_LED1.
+*/
+void vGPIO_BlinkLED()
+{
+    static uint8_t ui8LedStatus = 0;
+  
+    if(ui8LedStatus)
+      GPIOPinWrite(GPIO_PORTN_BASE, (USER_LED1), 0);
+    else
+      GPIOPinWrite(GPIO_PORTN_BASE, (USER_LED1), USER_LED1);
+
+    ui8LedStatus = !ui8LedStatus;
+}
