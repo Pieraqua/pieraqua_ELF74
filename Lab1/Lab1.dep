@@ -87,6 +87,7 @@
             <file>$TOOLKIT_DIR$\inc\c\xtgmath.h</file>
             <file>$TOOLKIT_DIR$\inc\c\ctype.h</file>
             <file>$TOOLKIT_DIR$\inc\c\stdlib.h</file>
+            <file>$PROJ_DIR$\..\Lab3\src\main.cpp</file>
             <file>$PROJ_DIR$\..\Lab3\startup_ewarm.c</file>
         </outputs>
         <file>
