@@ -663,7 +663,7 @@
             <data>
                 <extensions></extensions>
                 <cmdline></cmdline>
-                <hasPrio>128</hasPrio>
+                <hasPrio>1</hasPrio>
                 <buildSequence>inputOutputBased</buildSequence>
             </data>
         </settings>
@@ -2149,6 +2149,9 @@
     </group>
     <group>
         <name>Source</name>
+        <file>
+            <name>$PROJ_DIR$\histogram.s</name>
+        </file>
         <file>
             <name>$PROJ_DIR$\main.cpp</name>
         </file>
