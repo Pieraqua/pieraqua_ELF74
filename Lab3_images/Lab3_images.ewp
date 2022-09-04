@@ -70,7 +70,7 @@
                 </option>
                 <option>
                     <name>RTDescription</name>
-                    <state>A compact configuration of the C/C++14 runtime library. No locale interface, C locale, no file descriptor support, no multibytes in printf and scanf, and no hex floats in strtod.</state>
+                    <state>To be used with a compact configuration of the C/C++14 runtime library. No locale interface, C locale, no file descriptor support, no multibytes in printf and scanf, and no hex floats in strtod.</state>
                 </option>
                 <option>
                     <name>OGLastSavedByProductVersion</name>
@@ -347,7 +347,7 @@
                 </option>
                 <option>
                     <name>CCIncludePath2</name>
-                    <state></state>
+                    <state>$PROJ_DIR$\..\..\TivaWare_C_Series-2.2.0.295</state>
                 </option>
                 <option>
                     <name>CCStdIncCheck</name>
@@ -591,7 +591,7 @@
                 </option>
                 <option>
                     <name>AOutputFile</name>
-                    <state></state>
+                    <state>$FILE_BNAME$.o</state>
                 </option>
                 <option>
                     <name>ALimitErrorsCheck</name>
@@ -663,7 +663,7 @@
             <data>
                 <extensions></extensions>
                 <cmdline></cmdline>
-                <hasPrio>128</hasPrio>
+                <hasPrio>1</hasPrio>
                 <buildSequence>inputOutputBased</buildSequence>
             </data>
         </settings>
@@ -1066,7 +1066,7 @@
                 </option>
                 <option>
                     <name>IarchiveOutput</name>
-                    <state>###Unitialized###</state>
+                    <state>D:\Docs\Universidade\SistemasEmbarcados\pieraqua_ELF74\Lab3_images\Debug\Exe\Lab3_images.a</state>
                 </option>
             </data>
         </settings>
@@ -2142,12 +2142,18 @@
         </settings>
     </configuration>
     <group>
+        <name>Include</name>
+        <file>
+            <name>$PROJ_DIR$\images.h</name>
+        </file>
+    </group>
+    <group>
         <name>Source</name>
         <file>
             <name>$PROJ_DIR$\images.c</name>
         </file>
         <file>
-            <name>$PROJ_DIR$\images.h</name>
+            <name>$PROJ_DIR$\startup_ewarm.c</name>
         </file>
     </group>
 </project>

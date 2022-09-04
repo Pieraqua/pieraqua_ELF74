@@ -5,100 +5,102 @@
     <configuration>
         <name>Debug</name>
         <outputs>
-            <file>$TOOLKIT_DIR$\inc\cpp\system_error</file>
-            <file>$TOOLKIT_DIR$\inc\cpp\cmath</file>
-            <file>$TOOLKIT_DIR$\inc\cpp\cerrno</file>
-            <file>$TOOLKIT_DIR$\inc\cpp\cctype</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Product_stdlib.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\wctype.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\limits.h</file>
+            <file>$TOOLKIT_DIR$\inc\cpp\exception</file>
+            <file>$TOOLKIT_DIR$\inc\cpp\cwchar</file>
+            <file>$TOOLKIT_DIR$\inc\c\ysizet.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\xctype.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\time.h</file>
+            <file>$TOOLKIT_DIR$\inc\cpp\streambuf</file>
+            <file>$TOOLKIT_DIR$\inc\cpp\cstdint</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_float_setup.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\xmemnew</file>
+            <file>$TOOLKIT_DIR$\lib\dlpprt7M_tl_nc.a</file>
+            <file>$TOOLKIT_DIR$\inc\cpp\xtr1common</file>
+            <file>$TOOLKIT_DIR$\inc\cpp\ctime</file>
+            <file>$TOOLKIT_DIR$\inc\cpp\ios</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Defaults.h</file>
+            <file>$PROJ_DIR$\..\Lab3\main.cpp</file>
+            <file>$TOOLKIT_DIR$\inc\c\stddef.h</file>
+            <file>$TOOLKIT_DIR$\inc\cpp\cfloat</file>
+            <file>$TOOLKIT_DIR$\inc\cpp\ostream</file>
+            <file>$TOOLKIT_DIR$\lib\m7M_tls.a</file>
+            <file>$PROJ_DIR$\Debug\List\Lab1.map</file>
+            <file>$TOOLKIT_DIR$\inc\cpp\xmemory0</file>
+            <file>$TOOLKIT_DIR$\inc\cpp\xiosbase</file>
+            <file>$TOOLKIT_DIR$\inc\cpp\xlocale</file>
+            <file>$PROJ_DIR$\Debug\Obj\main.o</file>
+            <file>$TOOLKIT_DIR$\inc\c\locale.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\string.h</file>
+            <file>$TOOLKIT_DIR$\inc\cpp\xstddef</file>
+            <file>$TOOLKIT_DIR$\lib\dl7M_tln.a</file>
+            <file>$TOOLKIT_DIR$\inc\cpp\cstring</file>
+            <file>$TOOLKIT_DIR$\inc\cpp\new</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Product.h</file>
+            <file>$TOOLKIT_DIR$\inc\cpp\climits</file>
             <file>$PROJ_DIR$\Debug\Exe\Lab1.out</file>
-            <file>$TOOLKIT_DIR$\lib\rt7M_tl.a</file>
+            <file>$TOOLKIT_DIR$\inc\cpp\xutility</file>
+            <file>$TOOLKIT_DIR$\inc\c\stdio.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\float.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\stdint.h</file>
+            <file>$TOOLKIT_DIR$\inc\cpp\limits</file>
+            <file>$TOOLKIT_DIR$\inc\cpp\cstdlib</file>
+            <file>$TOOLKIT_DIR$\inc\cpp\initializer_list</file>
             <file>$TOOLKIT_DIR$\inc\c\ycheck.h</file>
             <file>$TOOLKIT_DIR$\lib\dlpp7M_tls_nc.a</file>
-            <file>$TOOLKIT_DIR$\inc\cpp\limits</file>
-            <file>$TOOLKIT_DIR$\inc\c\yvals.h</file>
-            <file>$TOOLKIT_DIR$\inc\cpp\iostream</file>
-            <file>$TOOLKIT_DIR$\config\linker\TexasInstruments\TM4C1294NC.icf</file>
             <file>$TOOLKIT_DIR$\inc\c\math.h</file>
-            <file>$TOOLKIT_DIR$\lib\shb_l.a</file>
-            <file>$TOOLKIT_DIR$\inc\cpp\iosfwd</file>
-            <file>$TOOLKIT_DIR$\inc\c\xlocale_lconv.h</file>
-            <file>$TOOLKIT_DIR$\inc\cpp\xutility</file>
             <file>$TOOLKIT_DIR$\inc\cpp\xstring</file>
-            <file>$TOOLKIT_DIR$\inc\c\stdio.h</file>
-            <file>$TOOLKIT_DIR$\inc\cpp\stdexcept</file>
-            <file>$TOOLKIT_DIR$\inc\c\wchar.h</file>
-            <file>$TOOLKIT_DIR$\inc\cpp\initializer_list</file>
-            <file>$TOOLKIT_DIR$\inc\cpp\cstdio</file>
-            <file>$TOOLKIT_DIR$\inc\c\stdint.h</file>
-            <file>$TOOLKIT_DIR$\inc\c\float.h</file>
-            <file>$TOOLKIT_DIR$\inc\cpp\cstdlib</file>
-            <file>$TOOLKIT_DIR$\inc\c\errno.h</file>
-            <file>$PROJ_DIR$\template.h</file>
             <file>$PROJ_DIR$\main.cpp</file>
-            <file>$TOOLKIT_DIR$\inc\c\xatomic.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\wchar.h</file>
+            <file>$PROJ_DIR$\template.h</file>
             <file>$TOOLKIT_DIR$\inc\cpp\type_traits</file>
-            <file>$TOOLKIT_DIR$\inc\c\DLib_Product_string.h</file>
-            <file>$TOOLKIT_DIR$\inc\cpp\xlocnum</file>
-            <file>$TOOLKIT_DIR$\inc\cpp\istream</file>
-            <file>$TOOLKIT_DIR$\inc\c\xstddef0</file>
-            <file>$TOOLKIT_DIR$\inc\cpp\cwctype</file>
-            <file>$TOOLKIT_DIR$\inc\c\ctype.h</file>
-            <file>$TOOLKIT_DIR$\inc\cpp\utility</file>
-            <file>$TOOLKIT_DIR$\inc\cpp\cstddef</file>
-            <file>$TOOLKIT_DIR$\inc\c\time64.h</file>
-            <file>$TOOLKIT_DIR$\inc\cpp\clocale</file>
-            <file>$TOOLKIT_DIR$\inc\cpp\typeinfo</file>
-            <file>$TOOLKIT_DIR$\inc\c\stdlib.h</file>
-            <file>$TOOLKIT_DIR$\inc\c\DLib_Config_Normal.h</file>
-            <file>$TOOLKIT_DIR$\inc\cpp\xxexception</file>
-            <file>$TOOLKIT_DIR$\inc\c\xtgmath.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\xlocale_lconv.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\yvals.h</file>
+            <file>$TOOLKIT_DIR$\inc\cpp\iosfwd</file>
             <file>$TOOLKIT_DIR$\inc\cpp\xlocinfo</file>
-            <file>$TOOLKIT_DIR$\inc\cpp\exception</file>
-            <file>$TOOLKIT_DIR$\inc\cpp\xmemory0</file>
-            <file>$TOOLKIT_DIR$\inc\cpp\xlocale</file>
-            <file>$TOOLKIT_DIR$\inc\cpp\xiosbase</file>
-            <file>$TOOLKIT_DIR$\inc\cpp\cstdint</file>
-            <file>$TOOLKIT_DIR$\inc\c\locale.h</file>
-            <file>$PROJ_DIR$\Debug\Obj\main.o</file>
-            <file>$TOOLKIT_DIR$\inc\c\string.h</file>
-            <file>$TOOLKIT_DIR$\inc\c\stddef.h</file>
-            <file>$TOOLKIT_DIR$\inc\c\DLib_Product_stdlib.h</file>
-            <file>$PROJ_DIR$\Debug\List\Lab1.map</file>
-            <file>$TOOLKIT_DIR$\inc\cpp\cwchar</file>
-            <file>$TOOLKIT_DIR$\inc\c\limits.h</file>
-            <file>$TOOLKIT_DIR$\inc\cpp\streambuf</file>
-            <file>$TOOLKIT_DIR$\inc\cpp\xstddef</file>
-            <file>$TOOLKIT_DIR$\inc\cpp\cfloat</file>
-            <file>$TOOLKIT_DIR$\lib\dl7M_tln.a</file>
-            <file>$TOOLKIT_DIR$\lib\dlpprt7M_tl_nc.a</file>
-            <file>$TOOLKIT_DIR$\inc\c\DLib_Product.h</file>
-            <file>$TOOLKIT_DIR$\inc\c\ysizet.h</file>
-            <file>$TOOLKIT_DIR$\inc\cpp\climits</file>
-            <file>$TOOLKIT_DIR$\inc\cpp\cstring</file>
-            <file>$TOOLKIT_DIR$\inc\c\DLib_float_setup.h</file>
-            <file>$TOOLKIT_DIR$\inc\cpp\new</file>
-            <file>$TOOLKIT_DIR$\inc\c\time.h</file>
-            <file>$TOOLKIT_DIR$\inc\cpp\ostream</file>
-            <file>$TOOLKIT_DIR$\inc\c\wctype.h</file>
-            <file>$TOOLKIT_DIR$\inc\c\xctype.h</file>
-            <file>$TOOLKIT_DIR$\inc\c\xmemnew</file>
-            <file>$TOOLKIT_DIR$\inc\cpp\ios</file>
-            <file>$TOOLKIT_DIR$\lib\m7M_tls.a</file>
-            <file>$TOOLKIT_DIR$\inc\cpp\xtr1common</file>
-            <file>$TOOLKIT_DIR$\inc\c\DLib_Defaults.h</file>
-            <file>$TOOLKIT_DIR$\inc\cpp\ctime</file>
+            <file>$TOOLKIT_DIR$\inc\cpp\stdexcept</file>
+            <file>$TOOLKIT_DIR$\inc\cpp\cstdio</file>
+            <file>$TOOLKIT_DIR$\inc\c\errno.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\xatomic.h</file>
+            <file>$TOOLKIT_DIR$\lib\rt7M_tl.a</file>
+            <file>$TOOLKIT_DIR$\inc\cpp\cctype</file>
+            <file>$TOOLKIT_DIR$\inc\cpp\system_error</file>
+            <file>$TOOLKIT_DIR$\inc\cpp\cmath</file>
+            <file>$TOOLKIT_DIR$\config\linker\TexasInstruments\TM4C1294NC.icf</file>
+            <file>$TOOLKIT_DIR$\lib\shb_l.a</file>
+            <file>$TOOLKIT_DIR$\inc\cpp\iostream</file>
+            <file>$TOOLKIT_DIR$\inc\cpp\cerrno</file>
+            <file>$TOOLKIT_DIR$\inc\cpp\cstddef</file>
+            <file>$TOOLKIT_DIR$\inc\cpp\typeinfo</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Config_Normal.h</file>
+            <file>$TOOLKIT_DIR$\inc\cpp\cwctype</file>
+            <file>$TOOLKIT_DIR$\inc\cpp\utility</file>
+            <file>$TOOLKIT_DIR$\inc\c\time64.h</file>
+            <file>$TOOLKIT_DIR$\inc\cpp\xlocnum</file>
+            <file>$TOOLKIT_DIR$\inc\c\xstddef0</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Product_string.h</file>
+            <file>$TOOLKIT_DIR$\inc\cpp\clocale</file>
+            <file>$TOOLKIT_DIR$\inc\cpp\xxexception</file>
+            <file>$TOOLKIT_DIR$\inc\cpp\istream</file>
+            <file>$TOOLKIT_DIR$\inc\c\xtgmath.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\ctype.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\stdlib.h</file>
+            <file>$PROJ_DIR$\..\Lab3\startup_ewarm.c</file>
         </outputs>
         <file>
             <name>$PROJ_DIR$\Debug\Exe\Lab1.out</name>
             <outputs>
                 <tool>
                     <name>ILINK</name>
-                    <file> 57</file>
+                    <file> 22</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ILINK</name>
-                    <file> 11 53 13 5 7 64 77 63</file>
+                    <file> 63 26 64 59 44 12 21 30</file>
                 </tool>
             </inputs>
         </file>
@@ -107,13 +109,13 @@
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 53</file>
+                    <file> 26</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 23 6 9 79 43 65 10 33 72 76 32 67 59 1 12 69 45 78 25 42 66 56 60 50 49 68 54 31 40 52 74 15 35 73 19 47 61 34 38 55 21 44 30 17 48 51 8 62 24 58 20 70 75 16 37 14 22 18 29 41 46 3 36 80 71 39 0 2 26 27</file>
+                    <file> 39 43 52 16 69 33 65 78 20 15 73 34 2 62 45 10 79 13 41 81 5 0 8 24 25 31 28 75 76 27 6 51 70 1 55 3 29 74 67 18 42 77 50 46 23 9 40 19 38 4 48 32 11 36 71 53 56 37 58 68 54 60 80 14 7 72 61 66 57 49</file>
                 </tool>
             </inputs>
         </file>
@@ -122,7 +124,7 @@
             <outputs>
                 <tool>
                     <name>ILINK</name>
-                    <file> 57 4</file>
+                    <file> 22 35</file>
                 </tool>
             </outputs>
         </file>

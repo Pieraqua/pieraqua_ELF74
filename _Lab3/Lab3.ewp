@@ -667,7 +667,7 @@
             <data>
                 <extensions></extensions>
                 <cmdline></cmdline>
-                <hasPrio>240</hasPrio>
+                <hasPrio>1</hasPrio>
                 <buildSequence>inputOutputBased</buildSequence>
             </data>
         </settings>
@@ -808,8 +808,7 @@
                 </option>
                 <option>
                     <name>IlinkAdditionalLibs</name>
-                    <state>$PROJ_DIR$\..\..\TivaWare_C_Series-2.2.0.295\driverlib\ewarm\Exe\driverlib.a</state>
-                    <state>$PROJ_DIR$\..\Lab3_images\Debug\Exe\Lab3_images.a</state>
+                    <state></state>
                 </option>
                 <option>
                     <name>IlinkOverrideProgramEntryLabel</name>
@@ -1078,20 +1077,26 @@
     </configuration>
     <group>
         <name>Include</name>
-        <file>
-            <name>$PROJ_DIR$\..\Lab3_images\images.h</name>
-        </file>
     </group>
     <group>
         <name>Libraries</name>
+        <file>
+            <name>$PROJ_DIR$\..\..\TivaWare_C_Series-2.2.0.295\driverlib\ewarm\Exe\driverlib.a</name>
+        </file>
     </group>
     <group>
         <name>Source</name>
         <file>
-            <name>$PROJ_DIR$\src\histogram.s</name>
+            <name>$PROJ_DIR$\histogram.s</name>
         </file>
         <file>
-            <name>$PROJ_DIR$\src\main.cpp</name>
+            <name>$PROJ_DIR$\images.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\main.cpp</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\startup_ewarm.c</name>
         </file>
     </group>
 </project>

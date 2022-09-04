@@ -2846,12 +2846,18 @@
         </settings>
     </configuration>
     <group>
+        <name>Include</name>
+        <file>
+            <name>$PROJ_DIR$\images.h</name>
+        </file>
+    </group>
+    <group>
         <name>Source</name>
         <file>
             <name>$PROJ_DIR$\images.c</name>
         </file>
         <file>
-            <name>$PROJ_DIR$\images.h</name>
+            <name>$PROJ_DIR$\startup_ewarm.c</name>
         </file>
     </group>
 </project>
