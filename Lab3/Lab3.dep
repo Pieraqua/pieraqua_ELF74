@@ -5,10 +5,20 @@
     <configuration>
         <name>Debug</name>
         <outputs>
-            <file>$PROJ_DIR$\src\main.cpp</file>
-            <file>$PROJ_DIR$\..\Lab3_images\images.h</file>
             <file>$PROJ_DIR$\src\histogram.s</file>
+            <file>$PROJ_DIR$\src\main.cpp</file>
+            <file>$PROJ_DIR$\ewarm\Obj\Source\main.o</file>
+            <file>$PROJ_DIR$\..\Lab3_images\images.c</file>
         </outputs>
+        <file>
+            <name>$PROJ_DIR$\src\main.cpp</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 2</file>
+                </tool>
+            </outputs>
+        </file>
         <forcedrebuild>
             <name>[REBUILD_ALL]</name>
         </forcedrebuild>
