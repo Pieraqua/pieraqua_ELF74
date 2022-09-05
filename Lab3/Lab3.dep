@@ -5,17 +5,48 @@
     <configuration>
         <name>Debug</name>
         <outputs>
+            <file>$PROJ_DIR$\ewarm\Exe\Lab3.bin</file>
+            <file>$PROJ_DIR$\ewarm\Exe\Lab2.out</file>
+            <file>$PROJ_DIR$\main.cpp</file>
             <file>$PROJ_DIR$\src\histogram.s</file>
             <file>$PROJ_DIR$\src\main.cpp</file>
             <file>$PROJ_DIR$\ewarm\Obj\Source\main.o</file>
+            <file>$PROJ_DIR$\ewarm\Obj\Source\histogram.o</file>
             <file>$PROJ_DIR$\..\Lab3_images\images.c</file>
         </outputs>
+        <file>
+            <name>$PROJ_DIR$\ewarm\Exe\Lab2.out</name>
+            <outputs>
+                <tool>
+                    <name>OBJCOPY</name>
+                    <file> 0</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\src\histogram.s</name>
+            <outputs>
+                <tool>
+                    <name>AARM</name>
+                    <file> 6</file>
+                </tool>
+            </outputs>
+        </file>
         <file>
             <name>$PROJ_DIR$\src\main.cpp</name>
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 2</file>
+                    <file> 5</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>[ROOT_NODE]</name>
+            <outputs>
+                <tool>
+                    <name>ILINK</name>
+                    <file> 1</file>
                 </tool>
             </outputs>
         </file>

@@ -19,8 +19,8 @@ EightBitHistogram
     MOV R5, #0                  ;R5 = 0
 clear_hist
     STR R5, [R3, R4]            ;hist[i] = 0
-    ADD R4, #1                  ;i += 1
-    CMP R4, #255                ;R5 == 255?
+    ADD R4, #2                 ;i += 2
+    CMP R4, #510                ;R5 == 255*2?
     BLT clear_hist
     MOV R4, #0                  ;i = 0
 calc_hist
