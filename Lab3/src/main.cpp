@@ -12,7 +12,7 @@ extern "C" uint16_t EightBitHistogram(uint16_t width, uint16_t height, uint8_t c
 
 int main()
 {
-  uint16_t *histogram = (uint16_t*)malloc(256*sizeof(uint16_t));
+  uint16_t histogram[256];
   int width = WIDTH;
   int height = HEIGHT;
   int pixels = EightBitHistogram(width, height, p_start_image1, histogram);

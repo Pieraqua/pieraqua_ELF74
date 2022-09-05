@@ -134,12 +134,6 @@
         </file>
         <file>
             <name>$PROJ_DIR$\src\main.cpp</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 15</file>
-                </tool>
-            </outputs>
             <inputs>
                 <tool>
                     <name>ICCARM</name>
