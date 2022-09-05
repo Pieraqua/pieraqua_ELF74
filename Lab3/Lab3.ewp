@@ -347,6 +347,7 @@
                     <name>CCIncludePath2</name>
                     <state>$PROJ_DIR$\..</state>
                     <state>$PROJ_DIR$\..\..\TivaWare_C_Series-2.2.0.295</state>
+                    <state>$PROJ_DIR$\..\Lab3_images</state>
                 </option>
                 <option>
                     <name>CCStdIncCheck</name>
@@ -667,7 +668,7 @@
             <data>
                 <extensions></extensions>
                 <cmdline></cmdline>
-                <hasPrio>240</hasPrio>
+                <hasPrio>192</hasPrio>
                 <buildSequence>inputOutputBased</buildSequence>
             </data>
         </settings>
