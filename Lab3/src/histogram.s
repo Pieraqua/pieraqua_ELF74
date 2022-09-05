@@ -3,6 +3,8 @@
     SECTION .text:CODE
     THUMB
     
+    EXPORT EightBitHistogram
+    
     
 ;Input: R0 -> width
 ;       R1 -> height
