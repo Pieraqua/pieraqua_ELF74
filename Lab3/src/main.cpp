@@ -10,5 +10,7 @@ int main()
   uint16_t histogram[256];
   int pixels = EightBitHistogram(width1, height1, &image1[0][0], histogram);
   cout << pixels << endl;
+  for (int i = 0; i < 255; i++){
+    cout << histogram[i] << endl;}
   return 0;
 }
