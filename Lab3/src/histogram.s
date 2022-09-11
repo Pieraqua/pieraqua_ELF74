@@ -29,8 +29,8 @@ clear_hist
     BLE clear_hist
     MOV R4, #0                  ;i = 0
 calc_hist
-    LDR R5, [R2, R4]            ;read a pixel in img
-    LDR R1, [R3, R5]            ;read hist[pixel]
+    LDRB R5, [R2, R4]            ;read a pixel in img
+    LDR R1, [R3, R5]           ;read hist[pixel]
     ADD R1, #1                  ;hist[pixel]++
     STR R1, [R3, R5]            ;hist[i] = cont
     ADD R4, #2                  ;i += 2 (img pixel is type uint16_t)

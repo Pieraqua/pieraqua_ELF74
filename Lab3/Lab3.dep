@@ -87,10 +87,12 @@
             <file>$TOOLKIT_DIR$\inc\c\locale.h</file>
             <file>$TOOLKIT_DIR$\inc\cpp\xiosbase</file>
             <file>$TOOLKIT_DIR$\inc\c\wctype.h</file>
+            <file>$PROJ_DIR$\..\Lab3_images\images.c</file>
             <file>$TOOLKIT_DIR$\inc\c\xctype.h</file>
             <file>$TOOLKIT_DIR$\inc\c\DLib_Product_stdlib.h</file>
             <file>$TOOLKIT_DIR$\inc\cpp\streambuf</file>
             <file>$TOOLKIT_DIR$\inc\c\xmemnew</file>
+            <file>$PROJ_DIR$\..\Lab3_images\startup_ewarm.c</file>
         </outputs>
         <file>
             <name>$PROJ_DIR$\ewarm\Exe\Lab3.bin</name>
@@ -121,7 +123,7 @@
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 33 12 2 54 13 48 29 47 46 17 56 37 6 16 38 7 8 72 66 73 76 83 84 80 78 64 75 67 74 79 82 65 71 81 24 49 51 39 50 60 53 27 59 40 62 30 52 26 31 55 25 45 85 70 61 32 68 28 69 35 43 57 36 77 41 58 63 34 42 22</file>
+                    <file> 33 12 2 54 13 48 29 47 46 17 56 37 6 16 38 7 8 72 66 73 76 84 85 80 78 64 75 67 74 79 83 65 71 81 24 49 51 39 50 60 53 27 59 40 62 30 52 26 31 55 25 45 86 70 61 32 68 28 69 35 43 57 36 77 41 58 63 34 42 22</file>
                 </tool>
             </inputs>
         </file>
