@@ -36,7 +36,7 @@ calc_hist
     STRH R1, [R3, R5]           ;hist[i] = cont
     ADD R4, #1                  ;i += 2 (img pixel is type uint16_t)
     CMP R4, R0                  ;i > img_size?
-    BLE calc_hist
+    BLT calc_hist
     
 return
     POP {R4, R5, PC}
