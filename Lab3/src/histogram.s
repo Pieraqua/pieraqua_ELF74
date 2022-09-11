@@ -23,17 +23,18 @@ EightBitHistogram
     MOV R4, #0                  ;i = 0
     MOV R5, #0                  ;R5 = 0 (to clear hist)
 clear_hist
-    STR R5, [R3, R4]            ;hist[i] = 0
+    STRH R5, [R3, R4]           ;hist[i] = 0
     ADD R4, #2                  ;i += 2
     CMP R4, #510                ;i == 255*2?
     BLE clear_hist
     MOV R4, #0                  ;i = 0
 calc_hist
-    LDRB R5, [R2, R4]            ;read a pixel in img
-    LDR R1, [R3, R5]           ;read hist[pixel]
+    LDRB R5, [R2, R4]           ;read a pixel in img
+    LSL R5, #1
+    LDRH R1, [R3, R5]           ;read hist[pixel]
     ADD R1, #1                  ;hist[pixel]++
-    STR R1, [R3, R5]            ;hist[i] = cont
-    ADD R4, #2                  ;i += 2 (img pixel is type uint16_t)
+    STRH R1, [R3, R5]           ;hist[i] = cont
+    ADD R4, #1                  ;i += 2 (img pixel is type uint16_t)
     CMP R4, R0                  ;i > img_size?
     BLE calc_hist
     
