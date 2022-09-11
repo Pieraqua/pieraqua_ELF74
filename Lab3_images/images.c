@@ -15,7 +15,7 @@ const uint16_t height0 = HEIGTH0;
 
 // create a small image for debugging. Fill values as you wish.
 const uint8_t image0[HEIGTH0][WIDTH0] = {
-    { 0, 0, 0, 0}, {0, 0, 0, 0}, {0,0,0,0}
+    { 20, 16, 16, 18}, {255, 255, 0, 0}, {32,32,32,32}
 };
 const uint8_t * const p_start_image0 = &image0[0][0];
 
