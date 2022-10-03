@@ -8,6 +8,7 @@
 #include <stdbool.h>
 #include "driverlib/systick.h"
 #include "driverlib/sysctl.h"
+#include "../lab5_gpio.h"
 
 
 #define DEMO_STACK_SIZE         1024
@@ -106,9 +107,6 @@ CHAR    *pointer = TX_NULL;
 
 void    thread_0_entry(ULONG thread_input)
 {
-
-UINT    status;
-
 
     /* This thread simply sits in while-forever-sleep loop.  */
     while(1)
