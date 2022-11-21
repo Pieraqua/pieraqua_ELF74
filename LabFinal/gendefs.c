@@ -19,9 +19,9 @@ typedef enum{
 }enumSaidasAr;
 
 /* Temperaturas definidas na escala de 0,1C */
-const uint8_t T_MIN = 160;
-const uint8_t T_MAX = 300;
-const uint8_t T_PASSO = 5;
+const uint16_t T_MIN = 160;
+const uint16_t T_MAX = 300;
+const uint16_t T_PASSO = 5;
 
 /* Velocidades */
 const uint8_t V_MAX = 5;

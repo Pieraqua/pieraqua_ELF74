@@ -1,5 +1,5 @@
 /*
-* Sistema de Configuracao
+* Sistema de Controle Saidas
 */
 #include "SistemaControleSaidas.h"
 

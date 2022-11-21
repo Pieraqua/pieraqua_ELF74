@@ -2156,9 +2156,30 @@
     </configuration>
     <group>
         <name>Headers</name>
+        <file>
+            <name>$PROJ_DIR$\SistemaConfiguracao.h</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\SistemaControleSaidas.h</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\SistemaControleTemperatura.h</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\SistemaControleVentilacao.h</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\SistemaInterfaceGrafica.h</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\SistemaMonitoramento.h</name>
+        </file>
     </group>
     <group>
         <name>Source</name>
+        <file>
+            <name>$PROJ_DIR$\gendefs.c</name>
+        </file>
         <file>
             <name>$PROJ_DIR$\main.c</name>
         </file>

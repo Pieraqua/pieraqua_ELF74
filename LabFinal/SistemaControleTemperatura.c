@@ -1,5 +1,5 @@
 /*
-* Sistema de Configuracao
+* Sistema de Controle de Temperatura
 */
 #include "SistemaControleTemperatura.h"
 
