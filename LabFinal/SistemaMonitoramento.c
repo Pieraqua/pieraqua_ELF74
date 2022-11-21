@@ -1,8 +1,7 @@
 /*
 * Sistema de Configuracao
 */
-#include <stdint.h>
-#include "tx_api.h"
+#include "SistemaMonitoramento.h"
 
 void monitoramentoThreadFxn(ULONG thread_input)
 {

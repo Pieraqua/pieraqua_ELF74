@@ -4,11 +4,4 @@
 #include <stdint.h>
 #include "tx_api.h"
 
-void controleVentilacaoThreadFxn(ULONG thread_input)
-{
-
-  while(1)
-  {
-    
-  }
-}
+void controleVentilacaoThreadFxn(ULONG thread_input);

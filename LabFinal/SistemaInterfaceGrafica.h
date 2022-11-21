@@ -4,11 +4,4 @@
 #include <stdint.h>
 #include "tx_api.h"
 
-void interfaceGraficaThreadFxn(ULONG thread_input)
-{
-
-  while(1)
-  {
-    
-  }
-}
+void interfaceGraficaThreadFxn(ULONG thread_input);

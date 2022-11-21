@@ -1,8 +1,7 @@
 /*
 * Sistema de Configuracao
 */
-#include <stdint.h>
-#include "tx_api.h"
+#include "SistemaControleTemperatura.h"
 
 void controleTempThreadFxn(ULONG thread_input)
 {

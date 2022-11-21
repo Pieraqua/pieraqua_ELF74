@@ -1,8 +1,7 @@
 /*
 * Sistema de Configuracao
 */
-#include <stdint.h>
-#include "tx_api.h"
+#include "SistemaControleVentilacao.h"
 
 void controleVentilacaoThreadFxn(ULONG thread_input)
 {
