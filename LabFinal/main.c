@@ -8,6 +8,7 @@
 #include "system.h"
 #include "gpio.h"
 #include "driverlib/interrupt.h"
+#include "enums.h"
 
 /* Threads presentes no sistema*/
 TX_THREAD config;
@@ -19,7 +20,9 @@ TX_THREAD monitor;
 TX_THREAD main_thread;
 
 /* Filas presentes no sistema */
+TX_QUEUE config_queue;
 TX_QUEUE temp_queue;
+TX_QUEUE med_queue;
 TX_QUEUE vent_queue;
 TX_QUEUE saida_queue;
 
@@ -30,7 +33,9 @@ UCHAR temp_stack[1024];
 UCHAR vent_stack[1024];
 UCHAR display_stack[1024];
 UCHAR monitor_stack[1024];
+UCHAR config_queue_mem[1024];
 UCHAR temp_queue_mem[1024];
+UCHAR med_queue_mem[1024];
 UCHAR vent_queue_mem[1024];
 UCHAR saida_queue_mem[128];
 UCHAR main_thread_mem[1024];
@@ -46,7 +51,8 @@ UCHAR   trace_buffer[0x10000];
 UINT vent_vel = 0;
 float temp_des;
 float temp_atual;
-UINT saida_atual;
+
+enSaidas saida_atual;
 /* saida 0: nenhuma 
    saida 1: pes
    saida 2: painel
@@ -113,7 +119,9 @@ void    tx_application_define(void *first_unused_memory)
             1, 1, TX_NO_TIME_SLICE, TX_AUTO_START);
     
     /* Cria a fila utilizada pelo sistema de configuracao */
+    tx_queue_create(&config_queue, "config queue", TX_1_ULONG, config_queue_mem, sizeof(config_queue_mem));
     tx_queue_create(&temp_queue, "temp queue", TX_1_ULONG, temp_queue_mem, sizeof(temp_queue_mem));
+    tx_queue_create(&med_queue, "med queue", TX_1_ULONG, med_queue_mem, sizeof(med_queue_mem));
     tx_queue_create(&vent_queue, "vent queue", TX_1_ULONG, vent_queue_mem, sizeof(vent_queue_mem));
     tx_queue_create(&saida_queue, "saida queue", TX_1_ULONG, saida_queue_mem, sizeof(saida_queue_mem));
     
