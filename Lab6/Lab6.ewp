@@ -593,7 +593,7 @@
                 </option>
                 <option>
                     <name>AOutputFile</name>
-                    <state></state>
+                    <state>$FILE_BNAME$.o</state>
                 </option>
                 <option>
                     <name>ALimitErrorsCheck</name>
@@ -647,7 +647,7 @@
                 </option>
                 <option>
                     <name>OOCOutputFile</name>
-                    <state></state>
+                    <state>Lab6.srec</state>
                 </option>
                 <option>
                     <name>OOCCommandLineProducer</name>
@@ -754,11 +754,11 @@
                 </option>
                 <option>
                     <name>IlinkIcfOverride</name>
-                    <state>0</state>
+                    <state>1</state>
                 </option>
                 <option>
                     <name>IlinkIcfFile</name>
-                    <state>$TOOLKIT_DIR$/config/linker/TexasInstruments/TM4C1294NC.icf</state>
+                    <state>$PROJ_DIR$\Tiva.icf</state>
                 </option>
                 <option>
                     <name>IlinkIcfFileSlave</name>

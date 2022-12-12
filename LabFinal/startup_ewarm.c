@@ -65,6 +65,9 @@ extern __weak void PendSV_Handler(void);
 extern __weak void SysTick_Handler(void);
 extern __weak void IntDefaultHandler(void);
 
+extern void IntPushButtonHandler(void);
+extern void vSYSTEM_Tick();
+
 //*****************************************************************************
 //
 // The entry point for the application startup code.
@@ -110,7 +113,7 @@ __root const intvec_elem __vector_table[] =
     DebugMon_Handler,                       // 12-Debug monitor handler
     0,                                      // 13-Reserved
     PendSV_Handler,                         // 14-The PendSV handler
-    SysTick_Handler,                        // 15-The SysTick handler
+    vSYSTEM_Tick,                        // 15-The SysTick handler
     
     //Interrupts                            exception number:                    IRQ number
     IntDefaultHandler,                      // 16-GPIO Port A                ;   0 GPIO Port A
@@ -164,7 +167,7 @@ __root const intvec_elem __vector_table[] =
     IntDefaultHandler,                      // 64-ADC1 Sequence 2            ;  48 ADC1 Sequence 2
     IntDefaultHandler,                      // 65-ADC1 Sequence 3            ;  49 ADC1 Sequence 3
     IntDefaultHandler,                      // 66-External Bus Interface 0   ;  50 External Bus Interface 0
-    IntDefaultHandler,                      // 67-GPIO Port J                ;  51 GPIO Port J
+    IntPushButtonHandler,                      // 67-GPIO Port J                ;  51 GPIO Port J
     IntDefaultHandler,                      // 68-GPIO Port K                ;  52 GPIO Port K
     IntDefaultHandler,                      // 69-GPIO Port L                ;  53 GPIO Port L
     IntDefaultHandler,                      // 70-SSI2 Rx and Tx             ;  54 SSI2 Rx and Tx

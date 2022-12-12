@@ -665,7 +665,7 @@
             <data>
                 <extensions></extensions>
                 <cmdline></cmdline>
-                <hasPrio>0</hasPrio>
+                <hasPrio>128</hasPrio>
                 <buildSequence>inputOutputBased</buildSequence>
             </data>
         </settings>
@@ -754,11 +754,11 @@
                 </option>
                 <option>
                     <name>IlinkIcfOverride</name>
-                    <state>0</state>
+                    <state>1</state>
                 </option>
                 <option>
                     <name>IlinkIcfFile</name>
-                    <state>$TOOLKIT_DIR$/config/linker/TexasInstruments/TM4C1294NC.icf</state>
+                    <state>C:\Users\cassi\Documents\UTFPR\Sistemas Embarcados\pieraqua_ELF74\Lab5\Tiva.icf</state>
                 </option>
                 <option>
                     <name>IlinkIcfFileSlave</name>
@@ -2157,6 +2157,9 @@
     <group>
         <name>Headers</name>
         <file>
+            <name>$PROJ_DIR$\gpio.h</name>
+        </file>
+        <file>
             <name>$PROJ_DIR$\SistemaConfiguracao.h</name>
         </file>
         <file>
@@ -2174,11 +2177,17 @@
         <file>
             <name>$PROJ_DIR$\SistemaMonitoramento.h</name>
         </file>
+        <file>
+            <name>$PROJ_DIR$\..\Lab2\src\system.h</name>
+        </file>
     </group>
     <group>
         <name>Source</name>
         <file>
             <name>$PROJ_DIR$\gendefs.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\gpio.c</name>
         </file>
         <file>
             <name>$PROJ_DIR$\main.c</name>
@@ -2203,6 +2212,9 @@
         </file>
         <file>
             <name>$PROJ_DIR$\startup_ewarm.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\Lab2\src\system.c</name>
         </file>
         <file>
             <name>$PROJ_DIR$\tx_initialize_low_level.s</name>

@@ -27,69 +27,28 @@ void vGPIO_Init()
     GPIOPinTypeGPIOOutput(GPIO_PORTN_BASE, (USER_LED1));
     /* Configuracao USER_LED2 */
     GPIOPinTypeGPIOOutput(GPIO_PORTN_BASE, (USER_LED2));
-    
-    /* Configuracao USER_SWITCH */
-    GPIOIntDisable(GPIO_PORTJ_BASE, 0x1FF);
-    GPIOIntTypeSet(GPIO_PORTJ_BASE, USER_SWITCH, GPIO_FALLING_EDGE);
-    GPIOPinTypeGPIOInput(GPIO_PORTJ_BASE, (USER_SWITCH));
-    GPIOPadConfigSet(GPIO_PORTJ_BASE, USER_SWITCH, GPIO_STRENGTH_2MA, GPIO_PIN_TYPE_STD_WPU);
-    GPIOIntEnable(GPIO_PORTJ_BASE, USER_SWITCH);
-    IntEnable(INT_GPIOJ);
-    
+    /* Configuracao USER_LED3 */
+    //GPIOPinTypeGPIOOutput(GPIO_PORTF_BASE, (USER_LED3));
 }
       
 /**
-* @brief Inverte o estado (pisca) o USER_LED2.
+* @brief Inverte o estado (pisca) o led indicado pelo input.
 */
-void vGPIO_BlinkLED()
+void vGPIO_BlinkLED(led_num)
 {
     static uint8_t ui8LedStatus = 0;
   
     if(ui8LedStatus)
-      GPIOPinWrite(GPIO_PORTN_BASE, (USER_LED2), 0);
+      //if (led_num != USER_LED3)
+        GPIOPinWrite(GPIO_PORTN_BASE, (led_num), 0);
+      //else
+        //GPIOPinWrite(GPIO_PORTF_BASE, (led_num), 0);
     else
-      GPIOPinWrite(GPIO_PORTN_BASE, (USER_LED2), USER_LED2);
-
+      //if (led_num != USER_LED3)
+        GPIOPinWrite(GPIO_PORTN_BASE, (led_num), led_num);
+      //else 
+        //GPIOPinWrite(GPIO_PORTF_BASE, (led_num), led_num);
+      
     ui8LedStatus = !ui8LedStatus;
 }
 
-/**
-* @brief Seta o estado do USER_LED1.
-*/
-void vGPIO_SetLED1(enLEDState val)
-{
-    GPIOPinWrite(GPIO_PORTN_BASE, (USER_LED1), val);
-}
-
-
-volatile uint8_t ui8FlagSwitch = 0;
-
-/**
-* @brief Seta o estado da flag do user_switch para @p val.
-*/
-void ui8GPIO_SetSwitchFlag(uint8_t val)
-{
-    ui8FlagSwitch = val;
-}
-
-/**
-* @brief Retorna o estado da flag do user_switch.
-*/
-uint8_t ui8GPIO_GetSwitchFlag()
-{
-    return ui8FlagSwitch;
-}
-
-/**
-* @brief Interrupcao do botao que seta a flag de botao para 1.
-*/
-void vGPIO_IntSwitch()
-{
-    if(GPIOIntStatus(GPIO_PORTJ_BASE, true) == GPIO_INT_PIN_0)
-    {
-        ui8FlagSwitch = 1;
-    }
-    
-    GPIOIntClear(GPIO_PORTJ_BASE, 0x1FF);
-    
-}

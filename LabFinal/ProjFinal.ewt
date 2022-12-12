@@ -2848,6 +2848,9 @@
     <group>
         <name>Headers</name>
         <file>
+            <name>$PROJ_DIR$\gpio.h</name>
+        </file>
+        <file>
             <name>$PROJ_DIR$\SistemaConfiguracao.h</name>
         </file>
         <file>
@@ -2865,11 +2868,17 @@
         <file>
             <name>$PROJ_DIR$\SistemaMonitoramento.h</name>
         </file>
+        <file>
+            <name>$PROJ_DIR$\..\Lab2\src\system.h</name>
+        </file>
     </group>
     <group>
         <name>Source</name>
         <file>
             <name>$PROJ_DIR$\gendefs.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\gpio.c</name>
         </file>
         <file>
             <name>$PROJ_DIR$\main.c</name>
@@ -2894,6 +2903,9 @@
         </file>
         <file>
             <name>$PROJ_DIR$\startup_ewarm.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\Lab2\src\system.c</name>
         </file>
         <file>
             <name>$PROJ_DIR$\tx_initialize_low_level.s</name>

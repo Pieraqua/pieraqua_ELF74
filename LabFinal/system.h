@@ -2,8 +2,6 @@
 * @file system.h
 * @brief Arquivo de configuracao do sistema e do SysTick.
 */
-#ifndef __SYS_H__
-#define __SYS_H__
 
 #include <stdbool.h>
 #include <stdint.h>
@@ -16,4 +14,3 @@
 * @brief Inicializa o clock do sistema e o SysTick.
 */
 void vSYSTEM_Init();
-#endif //__SYS_H__
