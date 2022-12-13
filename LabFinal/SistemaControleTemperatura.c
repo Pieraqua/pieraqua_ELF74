@@ -3,19 +3,16 @@
 */
 #include "SistemaControleTemperatura.h"
 
-extern float temp_atual;
-extern float temp_des;
-
 extern TX_QUEUE temp_queue;
 extern TX_QUEUE med_queue;
 ULONG temp_message;
 
-UINT temp_atual;
-UINT temp_des;
 
 void controleTempThreadFxn(ULONG thread_input)
 {
 
+  UINT temp_atual;
+  UINT temp_des;
   while(1)
   {
     /* Verifica se existem dados novos */

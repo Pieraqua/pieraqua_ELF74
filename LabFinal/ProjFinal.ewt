@@ -2848,6 +2848,9 @@
     <group>
         <name>Headers</name>
         <file>
+            <name>$PROJ_DIR$\enums.h</name>
+        </file>
+        <file>
             <name>$PROJ_DIR$\gpio.h</name>
         </file>
         <file>

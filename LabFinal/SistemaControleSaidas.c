@@ -2,13 +2,13 @@
 * Sistema de Controle Saidas
 */
 #include "SistemaControleSaidas.h"
+#include "enums.h"
 
 extern TX_QUEUE saida_queue;
 
-ULONG saida_message;
 void controleSaidaThreadFxn(ULONG thread_input)
 {
-
+  ULONG saida_message = 0;
   while(1)
   {
     /* Verifica se existem dados novos na notificacao */
@@ -18,6 +18,9 @@ void controleSaidaThreadFxn(ULONG thread_input)
         
       status = tx_queue_receive(&saida_queue, &saida_message, TX_NO_WAIT);
     }
-    /* Envia os dados para as tarefas interessadas */
+    
+    /* Controla as saidas */
+    
+    
   }
 }

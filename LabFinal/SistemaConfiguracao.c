@@ -7,12 +7,15 @@
 #include "enums.h"
 
 extern TX_QUEUE config_queue;
+extern TX_QUEUE display_queue;
+extern TX_QUEUE saida_queue;
+extern TX_QUEUE vent_queue;
+extern TX_QUEUE temp_queue;
 extern UINT vent_vel;
-ULONG last_message;
 
 typedef enum
 {
-  cmdSaidaPes = 0,
+  cmdSaidaPes = (ULONG)0,
   cmdSaidaVidro,
   cmdSaidaPainel,
   cmdSaidaDesligado,
@@ -22,20 +25,28 @@ typedef enum
   cmdTminus
 } enComandos;
 
+/* Estrutura com os dados que devem ser enviados para as tarefas */
 typedef struct
 {
-  UINT temp;
-  UINT vel;
+  ULONG temp;
+  ULONG vel;
   enSaidas saida;
-  
+  /* Ler a documentacao pra saber se precisa disso ou pode */
+  /* usar tamanho customizado na queue */
+  ULONG filler;
 } stConfig;
 
-stConfig STCONFIG;
 
-/*  */
 void configThreadFxn(ULONG thread_input)
 {
-
+  stConfig STCONFIG;
+  STCONFIG.saida = nenhuma;
+  STCONFIG.vel = 0;
+  STCONFIG.temp = 200;
+  STCONFIG.filler = -1;
+  enComandos last_message = cmdSaidaDesligado;
+  
+  
   while(1)
   {
     /* Verifica se existem dados novos na fila */
@@ -48,56 +59,53 @@ void configThreadFxn(ULONG thread_input)
       {
       case cmdSaidaPes:
         STCONFIG.saida = pes;
-        tx_queue_send(&saida_queue);
+        tx_queue_send(&display_queue, &STCONFIG, TX_NO_WAIT);
         break;
       case cmdSaidaPainel:
         STCONFIG.saida = painel;
-        tx_queue_send(&saida_queue);
-        
+        tx_queue_send(&display_queue, &STCONFIG, TX_NO_WAIT);
         break;
       case cmdSaidaVidro:
         STCONFIG.saida = vidro;
-        tx_queue_send(&saida_queue);
-        
+        tx_queue_send(&display_queue, &STCONFIG, TX_NO_WAIT);
         break;
       case cmdSaidaDesligado:
-        STCONFIG.saida = desligado;
-        tx_queue_send(&saida_queue);
-        
+        STCONFIG.saida = nenhuma;
+        tx_queue_send(&display_queue, &STCONFIG, TX_NO_WAIT);
         break;
       case cmdVplus:
         if(STCONFIG.vel < 5)
           STCONFIG.vel += 1;
-        tx_queue_send(&vent_queue);
-        
+        tx_queue_send(&display_queue, &STCONFIG, TX_NO_WAIT);
         break;
       case cmdVminus:
         if(STCONFIG.vel > 0)
           STCONFIG.vel -= 1;
-        tx_queue_send(&vent_queue);
-        
+        tx_queue_send(&display_queue, &STCONFIG, TX_NO_WAIT);
         break;
       case cmdTplus:
         if(STCONFIG.temp < 300)
           STCONFIG.temp += 5;
-        tx_queue_send(&temp_queue);
-        
+        tx_queue_send(&display_queue, &STCONFIG, TX_NO_WAIT);
         break;
       case cmdTminus:
         if(STCONFIG.temp > 160)
           STCONFIG.temp -= 5;
-        tx_queue_send(&temp_queue);
+        tx_queue_send(&display_queue, &STCONFIG, TX_NO_WAIT);
         break;
       }
       
-      status = tx_queue_receive(&config_queue, &last_message, TX_NO_WAIT);
+      /* Caso nao receba uma mensagem nova em 5 segundos, envia as configuracoes */
+      /* para as tarefas interessadas */
+      status = tx_queue_receive(&config_queue, &last_message, 5000);
     }
     
     
     /* Envia as informacoes novas para as tarefas interessadas */
-    
-    /* Ha um tempo de 5s entre cada operacao*/
-    tx_thread_sleep(5000);
+    /* Podia tratar o caso de nao conseguir enviar uma mensagem, mas nao tem muito o que fazer */
+    tx_queue_send(&saida_queue, &STCONFIG.saida, TX_NO_WAIT);
+    tx_queue_send(&vent_queue, &STCONFIG.vel, TX_NO_WAIT);
+    tx_queue_send(&temp_queue, &STCONFIG.temp, TX_NO_WAIT);
   }
 }
 
@@ -108,7 +116,7 @@ void configThreadFxn(ULONG thread_input)
     }
 }*/
 
-static void 
+void 
 IntPushButtonHandler(void){
     /* Se for de PJ0 -> V+ */
     /* Se for de PJ1 -> V- */

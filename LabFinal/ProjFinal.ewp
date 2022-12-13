@@ -665,7 +665,7 @@
             <data>
                 <extensions></extensions>
                 <cmdline></cmdline>
-                <hasPrio>128</hasPrio>
+                <hasPrio>1</hasPrio>
                 <buildSequence>inputOutputBased</buildSequence>
             </data>
         </settings>
@@ -758,7 +758,7 @@
                 </option>
                 <option>
                     <name>IlinkIcfFile</name>
-                    <state>C:\Users\cassi\Documents\UTFPR\Sistemas Embarcados\pieraqua_ELF74\Lab5\Tiva.icf</state>
+                    <state>$PROJ_DIR$\Tiva.icf</state>
                 </option>
                 <option>
                     <name>IlinkIcfFileSlave</name>
@@ -2156,6 +2156,9 @@
     </configuration>
     <group>
         <name>Headers</name>
+        <file>
+            <name>$PROJ_DIR$\enums.h</name>
+        </file>
         <file>
             <name>$PROJ_DIR$\gpio.h</name>
         </file>

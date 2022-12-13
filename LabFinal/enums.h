@@ -3,7 +3,7 @@
 
 typedef enum
 {
-  nenhuma = 0,
+  nenhuma = (ULONG)0,
   pes,
   painel,
   vidro

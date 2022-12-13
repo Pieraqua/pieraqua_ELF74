@@ -5,11 +5,11 @@
 #include <stdio.h>
 
 extern TX_QUEUE monitor_queue;
-ULONG temp;
 
 void monitoramentoThreadFxn(ULONG thread_input)
 {
 
+  ULONG temp = 0;
   while(1)
   {
     tx_thread_sleep(3000);

@@ -25,6 +25,8 @@ TX_QUEUE temp_queue;
 TX_QUEUE med_queue;
 TX_QUEUE vent_queue;
 TX_QUEUE saida_queue;
+TX_QUEUE display_queue;
+TX_QUEUE monitor_queue;
 
 /* Pilhas das threads */
 UCHAR config_stack[1024];
@@ -38,6 +40,8 @@ UCHAR temp_queue_mem[1024];
 UCHAR med_queue_mem[1024];
 UCHAR vent_queue_mem[1024];
 UCHAR saida_queue_mem[128];
+UCHAR display_queue_mem[1024];
+UCHAR monitor_queue_mem[1024];
 UCHAR main_thread_mem[1024];
 
 /* Handler da thread principal */
@@ -124,6 +128,8 @@ void    tx_application_define(void *first_unused_memory)
     tx_queue_create(&med_queue, "med queue", TX_1_ULONG, med_queue_mem, sizeof(med_queue_mem));
     tx_queue_create(&vent_queue, "vent queue", TX_1_ULONG, vent_queue_mem, sizeof(vent_queue_mem));
     tx_queue_create(&saida_queue, "saida queue", TX_1_ULONG, saida_queue_mem, sizeof(saida_queue_mem));
+    tx_queue_create(&display_queue, "display queue", TX_4_ULONG, display_queue_mem, sizeof(display_queue_mem));
+    tx_queue_create(&monitor_queue, "monitor queue", TX_1_ULONG, monitor_queue_mem, sizeof(monitor_queue_mem));
     
 }
 

@@ -9,7 +9,7 @@
 
 void configThreadFxn(ULONG thread_input);
 void config_queue_send_notify(TX_QUEUE *queue_ptr);
-static void IntPushButtonHandler(void);
+void IntPushButtonHandler(void);
 
 
 #endif //__SisConfig_H__
