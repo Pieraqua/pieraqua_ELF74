@@ -133,4 +133,5 @@ void IntPushButtonBooster(void){
         enComandos cmd = cmdTminus;
         tx_queue_send(&config_queue, &cmd, TX_NO_WAIT);
         GPIOIntClear(GPIO_PORTL_BASE, GPIO_INT_PIN_2);
-    }}
+    }
+}

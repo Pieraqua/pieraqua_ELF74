@@ -48,7 +48,7 @@ void monitoramentoThreadFxn(ULONG thread_input)
     /* Envia dados para as tarefas interessadas */
     temp = (potValue*100/4096)*40/100 + 10;
     
-    /* Envia duas vezes para que o display possa utilizar a mensagem */
+    /* Envia duas vezes para que o display possa utilizar a mensagem -> pratica ruim*/
     tx_queue_send(&monitor_queue, &temp, TX_NO_WAIT);
     tx_queue_send(&monitor_queue, &temp, TX_NO_WAIT);
     

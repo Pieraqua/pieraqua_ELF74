@@ -5,6 +5,7 @@
 */
 
 #include "gpio.h"
+#include "driverlib/adc.h"
 
 /**
 * Inicializa as portas GPIO utilizadas.
@@ -52,4 +53,26 @@ void vGPIO_Init()
     GPIOIntEnable(GPIO_PORTL_BASE, GPIO_PIN_2);
     
     IntEnable(INT_GPIOL);
+    
+    /* Configuracao USER_SWITCH do Joystick */
+    GPIOIntDisable(GPIO_PORTC_BASE, GPIO_PIN_6);
+    GPIOIntTypeSet(GPIO_PORTC_BASE, GPIO_PIN_6, GPIO_FALLING_EDGE);
+    GPIOPinTypeGPIOInput(GPIO_PORTC_BASE, GPIO_PIN_6);
+    GPIOPadConfigSet(GPIO_PORTC_BASE, GPIO_PIN_6, GPIO_STRENGTH_2MA, GPIO_PIN_TYPE_STD_WPU);
+    GPIOIntEnable(GPIO_PORTC_BASE, GPIO_PIN_6);
+    IntEnable(INT_GPIOC);
+    
+    /* Configuracao ADC (Joystick) */
+    /* eixo x */
+    GPIOPinTypeADC(GPIO_PORTE_BASE, GPIO_PIN_3);
+    GPIOADCTriggerEnable(GPIO_PORTE_BASE, GPIO_PIN_3);
+    /* eixo y */
+    GPIOPinTypeADC(GPIO_PORTE_BASE, GPIO_PIN_4);
+    GPIOADCTriggerEnable(GPIO_PORTE_BASE, GPIO_PIN_4);
+    
+    ADCSequenceConfigure(ADC1_BASE, 2, ADC_TRIGGER_TIMER, 0); 
+    ADCSequenceStepConfigure(ADC1_BASE, 2, 0, ADC_CTL_CH0);
+    ADCSequenceStepConfigure(ADC1_BASE, 2, 1, ADC_CTL_CH9 | ADC_CTL_IE | ADC_CTL_END);
+    ADCSequenceEnable(ADC1_BASE, 2); 
+    
 }
