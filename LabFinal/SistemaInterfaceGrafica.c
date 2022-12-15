@@ -2,11 +2,21 @@
 * Sistema de Interface Grafica
 */
 #include "SistemaInterfaceGrafica.h"
+#include "SistemaConfiguracao.h"
 
 extern tContext sContext;
 
 extern TX_QUEUE display_queue;
 ULONG display_message;
+extern TX_QUEUE monitor_queue;
+extern TX_QUEUE valv_queue;
+
+CHAR *vent_vel;
+CHAR *temp_des;
+CHAR *temp_atual;
+CHAR *valv_temp;
+CHAR *saida;
+
 
 void interfaceGraficaThreadFxn(ULONG thread_input)
 {
@@ -14,8 +24,25 @@ void interfaceGraficaThreadFxn(ULONG thread_input)
   while(1)
   {
     /* Verifica se existem mensagens na fila */
-    UINT status = tx_queue_receive(&display_queue, &display_message, TX_WAIT_FOREVER);
-    /* Atualiza a interface grafica */
+    UINT status = tx_queue_receive(&display_queue, &display_message, TX_NO_WAIT);
+    if(status == TX_SUCCESS){
+        /* Atualiza a interface grafica */
+        stConfig *data = (stConfig*)&display_message;
+        vent_vel = (UCHAR*)data->vel;
+        temp_des = (UCHAR*)data->temp;
+        saida = (CHAR*)data->saida;
+    }
+    
+    status = tx_queue_receive(&monitor_queue, &display_message, TX_NO_WAIT);
+    if(status == TX_SUCCESS){
+        temp_atual = (char*)&display_message;
+    }
+    status = tx_queue_receive(&valv_queue, &display_message, TX_NO_WAIT);
+    
+    if(status == TX_SUCCESS){
+        valv_temp = (char*)&display_message;
+    }          
+    displayStatus(temp_atual, temp_des, vent_vel, valv_temp, saida);
   }
 }
 

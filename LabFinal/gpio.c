@@ -14,86 +14,42 @@ void vGPIO_Init()
     //
     // Enable and wait for the port to be ready for access
     //
-    SysCtlPeripheralEnable(SYSCTL_PERIPH_GPION);
-    while(!SysCtlPeripheralReady(SYSCTL_PERIPH_GPION))
-    {
-    }
     SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOJ);
     while(!SysCtlPeripheralReady(SYSCTL_PERIPH_GPIOJ))
     {
     }
-    
-    /* Configuracao USER_LED1 */
-    GPIOPinTypeGPIOOutput(GPIO_PORTN_BASE, (USER_LED1));
-    /* Configuracao USER_LED2 */
-    GPIOPinTypeGPIOOutput(GPIO_PORTN_BASE, (USER_LED2));
+    SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOL);
+    while(!SysCtlPeripheralReady(SYSCTL_PERIPH_GPIOL))
+    {
+    }
     
     /* Configuracao USER_SWITCH */
-    GPIOIntDisable(GPIO_PORTJ_BASE, 0x1FF);
+    GPIOIntDisable(GPIO_PORTJ_BASE, USER_SWITCH);
     GPIOIntTypeSet(GPIO_PORTJ_BASE, USER_SWITCH, GPIO_FALLING_EDGE);
     GPIOPinTypeGPIOInput(GPIO_PORTJ_BASE, (USER_SWITCH));
     GPIOPadConfigSet(GPIO_PORTJ_BASE, USER_SWITCH, GPIO_STRENGTH_2MA, GPIO_PIN_TYPE_STD_WPU);
-    GPIOIntEnable(GPIO_PORTJ_BASE, USER_SWITCH2);
+    GPIOIntEnable(GPIO_PORTJ_BASE, USER_SWITCH);
+    
+    GPIOIntDisable(GPIO_PORTJ_BASE, USER_SWITCH2);
     GPIOIntTypeSet(GPIO_PORTJ_BASE, USER_SWITCH2, GPIO_FALLING_EDGE);
     GPIOPinTypeGPIOInput(GPIO_PORTJ_BASE, (USER_SWITCH2));
     GPIOPadConfigSet(GPIO_PORTJ_BASE, USER_SWITCH2, GPIO_STRENGTH_2MA, GPIO_PIN_TYPE_STD_WPU);
     GPIOIntEnable(GPIO_PORTJ_BASE, USER_SWITCH2);
+    
     IntEnable(INT_GPIOJ);
     
-}
-      
-/**
-* @brief Inverte o estado (pisca) o USER_LED2.
-*/
-void vGPIO_BlinkLED()
-{
-    static uint8_t ui8LedStatus = 0;
-  
-    if(ui8LedStatus)
-      GPIOPinWrite(GPIO_PORTN_BASE, (USER_LED2), 0);
-    else
-      GPIOPinWrite(GPIO_PORTN_BASE, (USER_LED2), USER_LED2);
-
-    ui8LedStatus = !ui8LedStatus;
-}
-
-/**
-* @brief Seta o estado do USER_LED1.
-*/
-void vGPIO_SetLED1(enLEDState val)
-{
-    GPIOPinWrite(GPIO_PORTN_BASE, (USER_LED1), val);
-}
-
-
-volatile uint8_t ui8FlagSwitch = 0;
-
-/**
-* @brief Seta o estado da flag do user_switch para @p val.
-*/
-void ui8GPIO_SetSwitchFlag(uint8_t val)
-{
-    ui8FlagSwitch = val;
-}
-
-/**
-* @brief Retorna o estado da flag do user_switch.
-*/
-uint8_t ui8GPIO_GetSwitchFlag()
-{
-    return ui8FlagSwitch;
-}
-
-/**
-* @brief Interrupcao do botao que seta a flag de botao para 1.
-*/
-void vGPIO_IntSwitch()
-{
-    if(GPIOIntStatus(GPIO_PORTJ_BASE, true) == GPIO_INT_PIN_0)
-    {
-        ui8FlagSwitch = 1;
-    }
+    /* Configuracao USER_SWITCH da BoosterPack*/
+    GPIOIntDisable(GPIO_PORTL_BASE, GPIO_PIN_1);
+    GPIOIntTypeSet(GPIO_PORTL_BASE, GPIO_PIN_1, GPIO_FALLING_EDGE);
+    GPIOPinTypeGPIOInput(GPIO_PORTL_BASE, GPIO_PIN_1);
+    GPIOPadConfigSet(GPIO_PORTL_BASE, GPIO_PIN_1, GPIO_STRENGTH_2MA, GPIO_PIN_TYPE_STD_WPU);
+    GPIOIntEnable(GPIO_PORTL_BASE, GPIO_PIN_1);
     
-    GPIOIntClear(GPIO_PORTJ_BASE, 0x1FF);
+    GPIOIntDisable(GPIO_PORTL_BASE, GPIO_PIN_2);
+    GPIOIntTypeSet(GPIO_PORTL_BASE, GPIO_PIN_2, GPIO_FALLING_EDGE);
+    GPIOPinTypeGPIOInput(GPIO_PORTL_BASE, GPIO_PIN_2);
+    GPIOPadConfigSet(GPIO_PORTL_BASE, GPIO_PIN_2, GPIO_STRENGTH_2MA, GPIO_PIN_TYPE_STD_WPU);
+    GPIOIntEnable(GPIO_PORTL_BASE, GPIO_PIN_2);
     
+    IntEnable(INT_GPIOL);
 }

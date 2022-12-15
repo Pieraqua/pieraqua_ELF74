@@ -22,7 +22,7 @@ TX_THREAD main_thread;
 /* Filas presentes no sistema */
 TX_QUEUE config_queue;
 TX_QUEUE temp_queue;
-TX_QUEUE med_queue;
+TX_QUEUE valv_queue;
 TX_QUEUE vent_queue;
 TX_QUEUE saida_queue;
 TX_QUEUE display_queue;
@@ -37,7 +37,7 @@ UCHAR display_stack[1024];
 UCHAR monitor_stack[1024];
 UCHAR config_queue_mem[1024];
 UCHAR temp_queue_mem[1024];
-UCHAR med_queue_mem[1024];
+UCHAR valv_queue_mem[1024];
 UCHAR vent_queue_mem[1024];
 UCHAR saida_queue_mem[128];
 UCHAR display_queue_mem[1024];
@@ -52,9 +52,7 @@ void mainThreadEntry(ULONG thread_input);
 UCHAR   trace_buffer[0x10000];
 #endif
 
-UINT vent_vel = 0;
-UINT temp_des;
-UINT temp_atual;
+
 /* Contexto para usar display */
 tContext sContext;
 
@@ -129,7 +127,7 @@ void    tx_application_define(void *first_unused_memory)
     /* Cria a fila utilizada pelo sistema de configuracao */
     tx_queue_create(&config_queue, "config queue", TX_1_ULONG, config_queue_mem, sizeof(config_queue_mem));
     tx_queue_create(&temp_queue, "temp queue", TX_1_ULONG, temp_queue_mem, sizeof(temp_queue_mem));
-    tx_queue_create(&med_queue, "med queue", TX_1_ULONG, med_queue_mem, sizeof(med_queue_mem));
+    tx_queue_create(&valv_queue, "valv queue", TX_1_ULONG, valv_queue_mem, sizeof(valv_queue_mem));
     tx_queue_create(&vent_queue, "vent queue", TX_1_ULONG, vent_queue_mem, sizeof(vent_queue_mem));
     tx_queue_create(&saida_queue, "saida queue", TX_1_ULONG, saida_queue_mem, sizeof(saida_queue_mem));
     tx_queue_create(&display_queue, "display queue", TX_4_ULONG, display_queue_mem, sizeof(display_queue_mem));

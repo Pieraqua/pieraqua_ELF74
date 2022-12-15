@@ -66,6 +66,7 @@ extern __weak void SysTick_Handler(void);
 extern __weak void IntDefaultHandler(void);
 
 extern void IntPushButtonHandler(void);
+extern void IntPushButtonBooster(void);
 extern void vSYSTEM_Tick();
 
 //*****************************************************************************
@@ -169,7 +170,7 @@ __root const intvec_elem __vector_table[] =
     IntDefaultHandler,                      // 66-External Bus Interface 0   ;  50 External Bus Interface 0
     IntPushButtonHandler,                      // 67-GPIO Port J                ;  51 GPIO Port J
     IntDefaultHandler,                      // 68-GPIO Port K                ;  52 GPIO Port K
-    IntDefaultHandler,                      // 69-GPIO Port L                ;  53 GPIO Port L
+    IntPushButtonBooster,                      // 69-GPIO Port L                ;  53 GPIO Port L
     IntDefaultHandler,                      // 70-SSI2 Rx and Tx             ;  54 SSI2 Rx and Tx
     IntDefaultHandler,                      // 71-SSI3 Rx and Tx             ;  55 SSI3 Rx and Tx
     IntDefaultHandler,                      // 72-UART3 Rx and Tx            ;  56 UART3 Rx and Tx

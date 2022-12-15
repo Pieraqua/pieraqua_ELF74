@@ -25,18 +25,6 @@ typedef enum
   cmdTminus
 } enComandos;
 
-/* Estrutura com os dados que devem ser enviados para as tarefas */
-typedef struct
-{
-  ULONG temp;
-  ULONG vel;
-  enSaidas saida;
-  /* Ler a documentacao pra saber se precisa disso ou pode */
-  /* usar tamanho customizado na queue */
-  ULONG filler;
-} stConfig;
-
-
 void configThreadFxn(ULONG thread_input)
 {
   stConfig STCONFIG;
@@ -50,7 +38,7 @@ void configThreadFxn(ULONG thread_input)
   while(1)
   {
     /* Verifica se existem dados novos na fila */
-    UINT status = tx_queue_receive(&config_queue, &last_message, TX_NO_WAIT);
+    UINT status = tx_queue_receive(&config_queue, &last_message, TX_WAIT_FOREVER);
     while(status == TX_SUCCESS){
       
       /* Consome o ultimo comando */
@@ -106,6 +94,7 @@ void configThreadFxn(ULONG thread_input)
     tx_queue_send(&saida_queue, &STCONFIG.saida, TX_NO_WAIT);
     tx_queue_send(&vent_queue, &STCONFIG.vel, TX_NO_WAIT);
     tx_queue_send(&temp_queue, &STCONFIG.temp, TX_NO_WAIT);
+    tx_queue_send(&display_queue, &STCONFIG, TX_NO_WAIT);
   }
 }
 
@@ -113,34 +102,35 @@ void
 IntPushButtonHandler(void){
     /* Se for de PJ0 -> V+ */
     /* Se for de PJ1 -> V- */
-    /* Se for de PJ4.33 /PL1 -> T+ */
-    /* Se for de PJ4.32 /PL2 -> T- */
     if(GPIOIntStatus(GPIO_PORTJ_BASE, true) == GPIO_INT_PIN_0)
     {
         enComandos cmd = cmdVplus;
-        tx_queue_send(&config_queue, &cmd, TX_WAIT_FOREVER);
+        tx_queue_send(&config_queue, &cmd, TX_NO_WAIT);
         GPIOIntClear(GPIO_PORTJ_BASE, GPIO_INT_PIN_0);
     }
     
     else if(GPIOIntStatus(GPIO_PORTJ_BASE, true) == GPIO_INT_PIN_1)
     {
         enComandos cmd = cmdVminus;
-        tx_queue_send(&config_queue, &cmd, TX_WAIT_FOREVER);
+        tx_queue_send(&config_queue, &cmd, TX_NO_WAIT);
         GPIOIntClear(GPIO_PORTJ_BASE, GPIO_INT_PIN_1);
     }
     
-    else if(GPIOIntStatus(GPIO_PORTL_BASE, true) == GPIO_INT_PIN_1)
+}
+
+void IntPushButtonBooster(void){
+    /* Se for de PJ4.33 /PL1 -> T+ */
+    /* Se for de PJ4.32 /PL2 -> T- */
+    if(GPIOIntStatus(GPIO_PORTL_BASE, true) == GPIO_INT_PIN_1)
     {
         enComandos cmd = cmdTplus;
-        tx_queue_send(&config_queue, &cmd, TX_WAIT_FOREVER);
+        tx_queue_send(&config_queue, &cmd, TX_NO_WAIT);
         GPIOIntClear(GPIO_PORTL_BASE, GPIO_INT_PIN_1);
     }
     
     else if(GPIOIntStatus(GPIO_PORTL_BASE, true) == GPIO_INT_PIN_2)
     {
         enComandos cmd = cmdTminus;
-        tx_queue_send(&config_queue, &cmd, TX_WAIT_FOREVER);
+        tx_queue_send(&config_queue, &cmd, TX_NO_WAIT);
         GPIOIntClear(GPIO_PORTL_BASE, GPIO_INT_PIN_2);
-    }
-    
-}
+    }}
