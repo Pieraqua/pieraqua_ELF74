@@ -113,7 +113,7 @@ __root const intvec_elem __vector_table[] =
     DebugMon_Handler,                       // 12-Debug monitor handler
     0,                                      // 13-Reserved
     PendSV_Handler,                         // 14-The PendSV handler
-    vSYSTEM_Tick,                        // 15-The SysTick handler
+    SysTick_Handler,                        // 15-The SysTick handler
     
     //Interrupts                            exception number:                    IRQ number
     IntDefaultHandler,                      // 16-GPIO Port A                ;   0 GPIO Port A

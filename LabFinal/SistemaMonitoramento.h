@@ -1,5 +1,5 @@
 /*
-* Sistema de Configuracao
+* Sistema de Monitoramento
 */
 #ifndef __SisMonitor_H__
 #define __SisMonitor_H__

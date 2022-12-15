@@ -109,24 +109,38 @@ void configThreadFxn(ULONG thread_input)
   }
 }
 
-/*void config_queue_send_notify(TX_QUEUE *queue_ptr){
-    UINT status = tx_queue_receive(&config_queue, &last_message, TX_WAIT_FOREVER);
-    if (status == TX_SUCCESS){
-        
-    }
-}*/
-
 void 
 IntPushButtonHandler(void){
     /* Se for de PJ0 -> V+ */
     /* Se for de PJ1 -> V- */
-    /* Se for de PJ4.33 -> T+ */
-    /* Se for de PJ4.32 -> T- */
+    /* Se for de PJ4.33 /PL1 -> T+ */
+    /* Se for de PJ4.32 /PL2 -> T- */
     if(GPIOIntStatus(GPIO_PORTJ_BASE, true) == GPIO_INT_PIN_0)
     {
-        
+        enComandos cmd = cmdVplus;
+        tx_queue_send(&config_queue, &cmd, TX_WAIT_FOREVER);
+        GPIOIntClear(GPIO_PORTJ_BASE, GPIO_INT_PIN_0);
     }
     
-    GPIOIntClear(GPIO_PORTJ_BASE, 0x1FF);
+    else if(GPIOIntStatus(GPIO_PORTJ_BASE, true) == GPIO_INT_PIN_1)
+    {
+        enComandos cmd = cmdVminus;
+        tx_queue_send(&config_queue, &cmd, TX_WAIT_FOREVER);
+        GPIOIntClear(GPIO_PORTJ_BASE, GPIO_INT_PIN_1);
+    }
+    
+    else if(GPIOIntStatus(GPIO_PORTL_BASE, true) == GPIO_INT_PIN_1)
+    {
+        enComandos cmd = cmdTplus;
+        tx_queue_send(&config_queue, &cmd, TX_WAIT_FOREVER);
+        GPIOIntClear(GPIO_PORTL_BASE, GPIO_INT_PIN_1);
+    }
+    
+    else if(GPIOIntStatus(GPIO_PORTL_BASE, true) == GPIO_INT_PIN_2)
+    {
+        enComandos cmd = cmdTminus;
+        tx_queue_send(&config_queue, &cmd, TX_WAIT_FOREVER);
+        GPIOIntClear(GPIO_PORTL_BASE, GPIO_INT_PIN_2);
+    }
     
 }

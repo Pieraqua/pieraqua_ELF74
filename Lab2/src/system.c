@@ -5,13 +5,6 @@
 
 #include "system.h"
 
-extern volatile uint32_t ui32ContTempo;
-void vSYSTEM_Tick()
-{
-    if(ui32ContTempo < UINT32_MAX)
-      ui32ContTempo++;
-}
-
 /**
 * @brief Inicializa o clock do sistema e o SysTick.
 */

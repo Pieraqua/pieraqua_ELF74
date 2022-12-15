@@ -53,8 +53,10 @@ UCHAR   trace_buffer[0x10000];
 #endif
 
 UINT vent_vel = 0;
-float temp_des;
-float temp_atual;
+UINT temp_des;
+UINT temp_atual;
+/* Contexto para usar display */
+tContext sContext;
 
 enSaidas saida_atual;
 /* saida 0: nenhuma 
@@ -71,6 +73,8 @@ int main()
     vSYSTEM_Init();
     vGPIO_Init();
     IntMasterEnable();
+    //Initialize LCD
+    cfaf128x128x16Init();
     
     SysCtlDelay(SYSTEM_CLOCK/10 * 5);
     

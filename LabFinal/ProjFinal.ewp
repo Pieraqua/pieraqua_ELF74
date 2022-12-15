@@ -227,6 +227,9 @@
                 <option>
                     <name>CCDefines</name>
                     <state>TX_ENABLE_IAR_LIBRARY_SUPPORT</state>
+                    <state>ewarm</state>
+                    <state>PART_TM4C1294NCPDT</state>
+                    <state>TARGET_IS_TM4C129_RA1</state>
                 </option>
                 <option>
                     <name>CCPreprocFile</name>
@@ -350,6 +353,7 @@
                     <state>$PROJ_DIR$\..\..\ThreadX\common\inc</state>
                     <state>$PROJ_DIR$\..\..\ThreadX\ports\cortex_m4\iar\inc</state>
                     <state>$PROJ_DIR$\..\..\TivaWare_C_Series-2.2.0.295</state>
+                    <state>$PROJ_DIR$\..</state>
                 </option>
                 <option>
                     <name>CCStdIncCheck</name>
@@ -517,7 +521,7 @@
                 </option>
                 <option>
                     <name>ADefines</name>
-                    <state></state>
+                    <state>ewarm</state>
                 </option>
                 <option>
                     <name>AList</name>
@@ -609,7 +613,8 @@
                 </option>
                 <option>
                     <name>AUserIncludes</name>
-                    <state></state>
+                    <state>$PROJ_DIR$\..</state>
+                    <state>$PROJ_DIR$\..\..\..\..</state>
                 </option>
                 <option>
                     <name>AExtraOptionsCheckV2</name>
@@ -665,7 +670,7 @@
             <data>
                 <extensions></extensions>
                 <cmdline></cmdline>
-                <hasPrio>1</hasPrio>
+                <hasPrio>224</hasPrio>
                 <buildSequence>inputOutputBased</buildSequence>
             </data>
         </settings>
@@ -811,7 +816,7 @@
                 </option>
                 <option>
                     <name>IlinkOverrideProgramEntryLabel</name>
-                    <state>0</state>
+                    <state>1</state>
                 </option>
                 <option>
                     <name>IlinkProgramEntryLabelSelect</name>
@@ -2157,6 +2162,9 @@
     <group>
         <name>Headers</name>
         <file>
+            <name>$PROJ_DIR$\..\..\Trabalho\LCD_demo\src\cfaf128x128x16.h</name>
+        </file>
+        <file>
             <name>$PROJ_DIR$\enums.h</name>
         </file>
         <file>
@@ -2186,6 +2194,9 @@
     </group>
     <group>
         <name>Source</name>
+        <file>
+            <name>$PROJ_DIR$\..\..\Trabalho\LCD_demo\src\cfaf128x128x16.c</name>
+        </file>
         <file>
             <name>$PROJ_DIR$\gendefs.c</name>
         </file>
